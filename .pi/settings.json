@@ -1,0 +1,10 @@
+{
+  "quietStartup": true,
+  "editorPaddingX": 1,
+  "outputPad": 1,
+  "tuiMode": "fullscreen",
+  "theme": "phi",
+  "packages": [
+    ".."
+  ]
+}

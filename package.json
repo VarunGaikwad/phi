@@ -1,0 +1,40 @@
+{
+  "name": "@preapexis/phi",
+  "version": "0.1.0",
+  "description": "A refined PHI-branded interface for the pi coding agent",
+  "type": "module",
+  "keywords": [
+    "pi-package"
+  ],
+  "files": [
+    "extensions",
+    "themes",
+    "README.md"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": ">=0.85.1",
+    "@earendil-works/pi-tui": ">=0.85.1",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@xterm/headless": "^6.0.0",
+    "typescript": "^5.9.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit --module esnext --moduleResolution bundler --target es2022 --types node --allowImportingTsExtensions --skipLibCheck extensions/phi.ts tests/*.test.ts",
+    "test": "node --experimental-transform-types --test tests/*.test.ts",
+    "test:smoke": "python3 tests/smoke.py"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/phi.ts"
+    ],
+    "themes": [
+      "./themes/phi.json"
+    ]
+  }
+}
