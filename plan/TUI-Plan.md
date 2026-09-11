@@ -1,6 +1,6 @@
 # PHI Terminal UI Plan
 
-> Status: implementation plan, not an implemented feature set.
+> Status: implementation plan, not an implemented feature set. Execution is queued behind the feasibility/permission prerequisites in [Execution Order](Execution-Order.md); no layout fallback has been selected.
 >
 > Companions: [Modes Plan](Modes-Plan.md) for workflow behavior and [Guard Plan](Guard-Plan.md) for the requested personal-file protection boundary.
 >

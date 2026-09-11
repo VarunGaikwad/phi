@@ -25,6 +25,8 @@
     "typescript": "^5.9.0"
   },
   "scripts": {
+    "guard:doctor": "node --experimental-transform-types guard-host/doctor.ts",
+    "guard:probe-docker": "node --experimental-transform-types guard-host/probe-docker.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-transform-types --test tests/*.test.ts",
     "test:smoke": "python3 tests/smoke.py"

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "noEmit": true,
+    "strict": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "target": "ES2022",
@@ -8,5 +9,5 @@
     "allowImportingTsExtensions": true,
     "skipLibCheck": true
   },
-  "include": ["extensions/**/*.ts", "tests/**/*.ts"]
+  "include": ["guard-host/**/*.ts", "extensions/**/*.ts", "tests/**/*.ts"]
 }

@@ -1,6 +1,6 @@
 # PHI Guard System Plan
 
-> Status: VM/container isolation and the reviewed working-copy workflow are approved. Windows host support is required; backend selection and implementation remain pending.
+> Status: VM/container isolation and reviewed working copies are approved. Windows 11 Home, Docker Desktop/WSL2, and mainly Node.js development are now confirmed. Phase 0 diagnostics and an opt-in [Docker fixture prototype](Docker-Prototype.md) are implemented; whole-agent containment and real Windows validation remain pending. See [Execution Order](Execution-Order.md) and [Phase 0 Findings](Phase-0-Findings.md).
 >
 > Companions: [Modes Plan](Modes-Plan.md) and [TUI Plan](TUI-Plan.md).
 >
@@ -631,10 +631,10 @@ No implementation or isolation tests are claimed by this planning document.
 | Isolation approach | PHI may use a VM or container; do not substitute extension-only protection | Approved by the user |
 | Host platform | PHI must work on Windows, including the controller, terminal, and file workflow | Confirmed requirement |
 | Workspace effects | Work in an isolated copy; explicitly review/approve changes before applying them to the real project | Approved by the user |
-| Exact backend | Select a Windows-compatible runtime after containment and toolchain tests | Pending Phase 0 validation |
+| Exact backend | Prototype Docker Desktop's WSL2 Linux engine for the confirmed Windows 11 Home / Node.js setup | Provisional candidate; full Phase 0 containment/toolchain validation still pending |
 | Sensitive/important file policy | Hard-deny known sensitive categories; configure additional private paths locally and classify safe fixtures explicitly | Recommended defaults; finalize during setup |
 
-Do not ask again whether VM/container use or reviewed working copies are acceptable. Remaining discovery concerns Windows version/edition, installation/virtualization constraints, and any native Windows-only tool requirements. No need to share private-file contents for this discovery.
+Do not ask again whether VM/container use or reviewed working copies are acceptable. The operator has now supplied Windows 11 Home, Docker Desktop and WSL2 installed, and mainly Node.js development. Remaining discovery concerns actual build/runtime versions, active settings/constraints, and provider authentication method; actual validation must occur on the Windows host. No need to share private-file contents or credentials for this discovery.
 
 These are approved design choices, not evidence that a backend is installed or protection is active. Installing dependencies, changing ACLs/trust, migrating files, exposing credentials, or starting a protected runtime is outside this documentation update.
 

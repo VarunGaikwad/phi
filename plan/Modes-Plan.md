@@ -1,6 +1,6 @@
 # PHI Workflow Modes Plan
 
-> Status: product recommendations approved by the user; implementation pending.
+> Status: product recommendations approved by the user; implementation pending behind the Guard feasibility gate. See [Execution Order](Execution-Order.md) for the chronological queue and actual progress.
 >
 > Package: `@preapexis/phi` · Inspected pi API baseline: `0.85.1`.
 >
