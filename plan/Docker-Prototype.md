@@ -9,13 +9,25 @@ questions. Do not ask to reconfirm those choices.
 **Provisional prototype choice:** Docker Desktop's WSL2 Linux engine with a
 Linux Node.js guest. Windows Home is a Linux-container target; this design does
 not require upgrading to Pro or installing Hyper-V. Native Windows build tools
-are not covered by this candidate. Actual Windows build, Docker Desktop/Engine
-and WSL versions/settings remain to be tested.
+are not covered by this candidate. Actual Windows build and installed Docker
+Desktop/CLI and WSL versions are now recorded in
+[native Windows execution evidence](Windows-Phase-0-Run.md). On retry, Engine
+**29.4.3**, Docker Desktop Linux and WSL2 kernel metadata were observed. Remaining
+active settings and containment are unverified.
 
-Docker/WSL presence is operator-reported, not observed from this coding session's
-Linux environment. This is **not a supported production backend yet**, and no
-Docker/Windows containment check has been run here. The [execution queue](Execution-Order.md)
+After the initial engine/image blockers, the operator explicitly approved the
+Node image download. The corrected native fixture **passed all ten checks and
+cleanup** on Engine 29.4.3. See [pass evidence](Windows-Docker-Fixture-Pass.md) for
+image identity, the Docker 29 optional-field formatting fix, and remaining gaps.
+The fixture container was removed; the approved image remains local. This is
+**not a supported production backend yet**; the [execution queue](Execution-Order.md)
 remains in Guard Phase 0.
+
+The operator subsequently deferred provider/authentication-method and gateway
+work. A separate [host-only synthetic-copy experiment](Synthetic-Copy-Prototype.md)
+passed seven checks and cleanup. It is not connected to this container fixture,
+not a production admission service, and not whole-agent or NTFS race-safety proof.
+Continue independent offline work; retain the gateway requirement as pending.
 
 ## What has been implemented
 
@@ -38,7 +50,9 @@ With explicit `--confirm`, a trusted installed `docker.exe`, and an existing loc
    is compatibility evidence, not an OS security attestation or exact WSL version.
 5. Looks up only the local Node image, rejects declared volumes/on-build hooks,
    resolves the tag to its immutable image ID, and creates by ID with `--pull=never`.
-   No image is pulled, built, retagged, removed, or installed by the probe.
+   The query uses `index` for the two schema-defined optional image fields so
+   Docker 29 can return explicit nulls when they are omitted; nonempty values are
+   still denied. No image is pulled, built, retagged, removed, or installed by the probe.
 6. Creates one randomly named/labeled container with UID/GID 1000, all capabilities
    dropped, no-new-privileges, read-only root, private IPC/cgroup namespaces,
    non-host PID/UTS namespaces, `runc`, `--network=none`, no published ports,
@@ -81,13 +95,18 @@ path instead if PATH may contain untrusted programs.
 
 ```powershell
 $docker = (Get-Command docker.exe -CommandType Application).Source
-npm run guard:probe-docker -- --docker "$docker" --confirm --json
+npm.cmd run --silent guard:probe-docker -- --docker "$docker" --confirm --json
 ```
 
 `--confirm` authorizes only the documented disposable fixture, not project
 execution, general host commands, networking, or a production Guard launch.
-Use `npm run --silent guard:probe-docker -- ...` if stdout must contain only JSON.
-`--help` is safe on any host and creates nothing.
+Use **`npm.cmd` explicitly in Windows PowerShell**. On the tested PowerShell 5.1 /
+npm 12.0.2 combination, unqualified `npm` failed to forward the separator and npm
+rejected `--docker` / `--confirm` with `EUNKNOWNCONFIG`, before the probe ran.
+`--silent` keeps npm's script banner out of JSON stdout; Node may still emit its
+experimental-types warning on stderr. On other shells,
+`npm run --silent guard:probe-docker -- ...` remains available. `--help` is safe on
+any host and creates nothing.
 
 An existing local official `node:24-bookworm-slim` image is required. If absent,
 the probe stops at `local-image` rather than downloading anything. If you choose
@@ -122,6 +141,9 @@ keys/tokens, private filenames, or unfiltered `docker inspect` / `docker info`.
   actual Desktop engine/settings. The probe does not switch engines or modify WSL.
 - `DOCKER_COMMAND_FAILED` at `local-image`: verify the required local image exists.
   At `engine`, verify Desktop is running and the selected executable/pipe works.
+  This was the first native Windows result: Desktop/backend were not running and
+  the local pipe was missing. Start Desktop through the trusted UI, wait for its
+  Linux/WSL2 engine, then retry; the probe never starts Desktop or changes settings.
 - Inspection mismatch: stop and report the sanitized rule/stage. Do not remove
   security flags until the actual API/version difference has been investigated.
 - `cleanup: unconfirmed`: use Docker Desktop to inspect the reported synthetic
@@ -152,12 +174,14 @@ The fixture starts **Node only, not pi**. A successful check does not establish:
 - Guaranteed erasure from swap: tmpfs can be backed by VM swap; memory settings are
   resource restrictions, not a secure-erasure mechanism.
 
-Before selecting a supported backend: run this fixture on the target Windows
-setup, then implement the whole-agent sanitized-copy prototype with fake-provider
+The primitive fixture has passed on the recorded Windows setup, but before
+selecting a supported backend, implement the whole-agent sanitized-copy prototype with fake-provider
 credentials, independent synthetic host read/write canaries, lifecycle/stop tests,
 and the remaining Guard matrix. Record exact tested versions/configuration and
-remaining gaps. Real provider integration needs the intended provider identity and
-**authentication method only**, never the credential itself.
+remaining gaps. Provider integration is currently **deferred by the operator**,
+not passed. When revisited it needs the intended provider identity and
+**authentication method only**, never the credential itself. A deterministic
+offline provider can support agent/tool testing but cannot complete gateway proof.
 
 ## References reviewed
 
@@ -176,5 +200,8 @@ Vendor documentation informs the prototype, not a support claim:
   — endpoint/config/environment precedence; do not inherit a remote context.
 - Moby `api/types/container/hostconfig.go` / `config.go` — required versus omitted
   inspection fields. These are reviewed schemas, not code imported by PHI.
+- [OCI ImageConfig](https://github.com/opencontainers/image-spec/blob/main/specs-go/v1/config.go)
+  and [Docker image extensions](https://github.com/moby/docker-image-spec/blob/main/specs-go/v1/image.go)
+  — optional `Volumes` / `OnBuild`; validated against the actual Docker 29 query.
 - pi 0.85.1 `docs/containerization.md` and the earlier [API review](Phase-0-Findings.md)
   — do not substitute a host tool-routing extension or whole-project bind mount.

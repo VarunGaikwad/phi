@@ -1,21 +1,82 @@
-# Phase 0 findings: backend gate still blocked
+# Phase 0 findings: primitive fixture passed, whole-agent gate incomplete
 
 Companions: [execution queue](Execution-Order.md), [Guard](Guard-Plan.md),
 [Modes](Modes-Plan.md), [TUI](TUI-Plan.md).
 
-## Observed and operator-reported baseline
+## Current continuation: provider deferred, offline copy fixture passed
 
-The operator has confirmed **Windows 11 Home**, **Docker Desktop and WSL2
-installed**, and **mainly Node.js development**. The Linux observations below
-describe this coding environment, not the operator's Windows installation.
-Actual build/runtime versions, settings and containment remain unverified.
-The next executable check is the [Docker fixture prototype](Docker-Prototype.md).
+The operator deferred provider/authentication-method selection and gateway work.
+Do not ask for those details again while continuing independent offline checks.
+The requirement is still pending, not waived or counted as a successful gate.
+
+A separate **host-only synthetic-copy experiment** is implemented and passed on
+native Windows Node **22.23.0**: all **7 checks**, exit **0**, cleanup **removed**.
+It creates its own source, exports only three fixed files into a fresh copy,
+checks bounded packet integrity and detached edits/deletions, and never accepts a
+real project path. Actual synthetic Windows hard links, directory junctions and
+an alternate-stream case passed. This is **not** production admission, NTFS race
+safety or independent guest containment. See [scope/evidence](Synthetic-Copy-Prototype.md).
+
+Latest validation: typecheck and doctor CLI smoke passed; **63 tests passed,
+0 failed, 1 POSIX-only skip** (64 cases, including 16 new copy tests). No new pi or
+Docker runtime was started and no further provisioning occurred in this work.
+Installed pi SDK/resource/provider documentation and runtime packaging were
+investigated for the next offline whole-agent experiment; no runtime proof was
+obtained from that research. The current pi process is still not protected.
+
+Next: whole-agent offline container startup with clean resources/environment and
+a synthetic admitted copy, followed by independent containment/network/lifecycle
+and stop proofs. Provider/gateway validation remains deferred and the full Guard
+Phase 0 gate remains incomplete. Private classifications stay local.
+
+## Earlier continuation: native Windows Docker fixture passed
+
+The coding session now runs on **Windows 11 Home Single Language 25H2,
+`26200.9445`**, Node `22.23.0`, npm `12.0.2`, and PowerShell `5.1.26100.9444`.
+Observed installed versions: Docker Desktop `4.74.0.227015`, Docker CLI `29.4.3`
+(valid Docker Inc signature), and WSL `2.7.3.0`. The process is not elevated;
+Windows reports a hypervisor present. Local pi/pi-tui remain `0.85.1`.
+
+The initial engine/image blockers are preserved in the earlier Windows record.
+After explicit download approval, the official Node image was provisioned with an
+empty Docker client configuration/environment allowlist. A Docker 29 strict
+lookup issue for omitted optional image metadata was fixed using schema-reviewed
+`index` lookups; nonempty volume/hook declarations remain denied.
+
+The native fixture then returned **exit 0, all ten checks passed, cleanup
+removed**, on Engine **29.4.3**, Docker Desktop Linux, kernel
+`6.6.114.1-microsoft-standard-WSL2`. A separate scoped query confirmed the fixture
+container was gone. The approved image is retained locally; its Node metadata is
+`24.21.0` (the fixture checks running major version 24). No pi runtime was launched.
+Remaining active settings and whole-agent containment are unverified.
+
+Windows typecheck and doctor CLI smoke passed. After three query/validation
+regression tests, the unit suite passed **47 tests, with one POSIX-only test
+skipped and zero failures**. Doctor still returns Locked.
+Explicit `npm.cmd` fixes the observed PowerShell/npm argument-forwarding failure;
+the runbook and CLI help now use it on Windows, with help regression assertions.
+See [native Windows pass evidence](Windows-Docker-Fixture-Pass.md) for the
+sanitized report, image digest, version matrix, command and scope of each check.
+
+That run left whole-agent sanitized-copy and synthetic host-canary/network/lifecycle
+proof, plus fake-credential gateway compatibility pending. The subsequent offline
+copy result above is a separate preparation step, not completion of those checks.
+Provider work has now been deferred by the operator. No full phase gate has
+advanced, and no further download or settings change is implicitly approved.
+
+## Initial Linux baseline (historical)
+
+The operator had confirmed **Windows 11 Home**, **Docker Desktop and WSL2
+installed**, and **mainly Node.js development**. The observations in this table
+are from the earlier Linux implementation session, not the current Windows run.
+Build/runtime versions and active settings were unverified at that point; the
+current Windows evidence above supersedes those discovery gaps where stated.
 
 | Item | Observation |
 |---|---|
 | Intended user host | **Windows 11 Home**, confirmed by the operator; exact build pending |
 | Operator-reported runtime | Docker Desktop and WSL2 installed; versions/settings not yet verified |
-| Host available to this coding session | Linux x64, kernel `6.12.95-cloud-amd64` |
+| Earlier implementation host | Linux x64, kernel `6.12.95-cloud-amd64` |
 | Node / npm | v24.17.0 / 11.13.0 |
 | Local pi coding agent / pi-tui | 0.85.1 / 0.85.1 (`npm ls --depth=0`) |
 | Installed pi documentation baseline | 0.85.1, matching the local peer dependencies |
@@ -92,9 +153,9 @@ These findings guide later prototypes; documentation review is not runtime proof
   Those conveniences conflict with this project's staged-copy/credential boundary.
 - **Docker Desktop WSL2 Linux is now the provisional prototype target.** The
   operator's Home/Node.js setup and reviewed Docker vendor documentation motivate
-  this choice. A fixed disposable Node fixture runner is implemented; actual
-  Windows/backend execution and production selection remain pending. OpenShell
-  and Docker Sandboxes have not been selected or installed. See the
+  this choice. The fixed disposable Node fixture has now passed on native Windows;
+  whole-agent proof and production selection remain pending. OpenShell and Docker
+  Sandboxes have not been selected or installed. See the
   [prototype runbook](Docker-Prototype.md) for vendor references and limitations.
 - **Mode enforcement needs final execution checks.** Tool provenance metadata and
   active-tool APIs exist; later hooks can mutate arguments after preflight, and
@@ -115,10 +176,14 @@ force a local Docker pipe/clean client config, inspect restrictions before start
 validate fixed guest results, and ownership-check cleanup. They do not import the
 project, launch pi, pull images, or create a production Guard permission grant.
 Fakes test policy, lifecycle, cancellation, malformed settings, and cleanup; local
-Node subprocess tests verify bounded output and direct argument handling. No real
-Docker container has been created in this coding environment.
+Node subprocess tests verify bounded output and direct argument handling. The
+real native Windows Node fixture has now completed successfully and been removed;
+no whole-agent container has been implemented or started.
 
-## Validation actually run
+## Initial validation (Linux, historical)
+
+Current native Windows results are listed above and in the linked evidence file.
+The following table preserves the earlier Linux run, not a current-host claim.
 
 | Check | Result | Scope |
 |---|---|---|
@@ -129,8 +194,8 @@ Docker container has been created in this coding environment.
 | `npm run guard:probe-docker -- --help` | Passed | New CLI help; no Docker operations |
 | Docker probe with valid synthetic arguments on this Linux host | Exit 2, expected | `DOCKER_WINDOWS_HOST_REQUIRED`; no Docker operations |
 
-Not run / not claimed: whole-agent isolation, snapshot exclusion, host patch
-application, provider streaming/OAuth proxying, network/IPC containment, NTFS
+Not run in that Linux validation / not claimed: whole-agent isolation, snapshot
+exclusion, host patch application, provider streaming/OAuth proxying, network/IPC containment, NTFS
 aliases/reparse/race behavior, native Windows execution/cancellation, workflow
 modes, editor/inspector rendering, real terminal smoke, clean pi installation,
 tarball acceptance, or independent security review. The smoke script is currently
@@ -139,10 +204,14 @@ tarball acceptance, or independent security review. The smoke script is currentl
 ## Gate decision
 
 **Do not advance beyond Guard Phase 0 or advertise protection.** Initial
-platform/toolchain questions are answered. Run the opt-in Docker fixture on the
-confirmed Windows 11 Home setup, then continue the whole-agent backend proof with
-sanitized copies, synthetic host canaries and fake-provider credentials. The
-fixture alone does not satisfy the complete gate. Record the exact tested product/version/config
+platform/toolchain questions are answered, and installed Windows/runtime versions
+are now observed. The separately approved image download and primitive fixture
+have passed on the confirmed Windows 11 Home setup. Continue the whole-agent
+backend proof with an offline whole-agent runtime, synthetic copies and host
+canaries. Keep provider identity/authentication method and gateway validation
+**deferred / pending** until revisited; an offline deterministic provider cannot
+satisfy gateway acceptance. Neither the Docker Node fixture nor the separate
+host-side copy fixture satisfies the complete gate. Record the exact tested product/version/config
 matrix and unresolved gaps before choosing a supported backend. No virtualization
 installation, host ACL/trust change, credential exposure, or unrestricted fallback
 is an acceptable substitute for that proof.

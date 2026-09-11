@@ -5,7 +5,8 @@ import { join, win32 } from "node:path";
 import { executeDocker, probeDocker } from "./docker-probe.ts";
 import { DOCKER_ENDPOINT, DockerProbeError, requireProbe } from "./docker-spec.ts";
 
-const USAGE = 'Usage: npm run guard:probe-docker -- --docker "C:\\path\\to\\docker.exe" --confirm [--json]\n';
+// PowerShell's npm.ps1 can consume `--`; use the explicit cmd shim on Windows.
+const USAGE = `Usage: ${process.platform === "win32" ? "npm.cmd" : "npm"} run guard:probe-docker -- --docker "C:\\path\\to\\docker.exe" --confirm [--json]\n`;
 export interface ProbeArguments { docker: string; json: boolean }
 
 export function validateDockerPath(value: string): void {

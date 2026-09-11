@@ -2,7 +2,7 @@ import { collectPreflight, formatPreflight, type GuardPreflight } from "./prefli
 
 export const LOCKED_EXIT_CODE = 2;
 export const USAGE_EXIT_CODE = 64;
-const USAGE = "Usage: npm run guard:doctor -- [--json | --help]\n";
+const USAGE = `Usage: ${process.platform === "win32" ? "npm.cmd" : "npm"} run guard:doctor -- [--json | --help]\n`;
 
 interface DoctorIO {
   out(text: string): void;

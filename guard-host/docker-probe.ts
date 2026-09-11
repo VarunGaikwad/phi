@@ -63,8 +63,11 @@ export async function probeDocker(run: DockerCommand, nonce: string, signal?: Ab
       '{"OSType":{{json .OSType}},"OperatingSystem":{{json .OperatingSystem}},"KernelVersion":{{json .KernelVersion}},"ServerVersion":{{json .ServerVersion}}}',
     ])));
     report.stage = "local-image";
+    // OCI Volumes and Docker OnBuild are omitempty. Docker 29's strict map
+    // templates reject missing dotted keys; index returns null for absent keys.
+    // Keep explicit fields in our response and reject every nonempty value.
     report.imageId = inspectImage(parseJson(await checkedRun(["image", "inspect", "--format",
-      '{"Id":{{json .Id}},"Os":{{json .Os}},"Config":{"Volumes":{{json .Config.Volumes}},"OnBuild":{{json .Config.OnBuild}}}}', LOCAL_NODE_IMAGE,
+      '{"Id":{{json .Id}},"Os":{{json .Os}},"Config":{"Volumes":{{json (index .Config "Volumes")}},"OnBuild":{{json (index .Config "OnBuild")}}}}', LOCAL_NODE_IMAGE,
     ])));
     // The local tag is resolved once; create is pinned by immutable image ID and cannot pull.
     report.stage = "create";

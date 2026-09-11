@@ -59,6 +59,13 @@ test("only local Linux images without persistent volumes or on-build hooks are e
   }
 });
 
+test("normalized image metadata must still include both optional-field decisions", () => {
+  for (const config of [{}, { Volumes: null }, { OnBuild: null }, null,
+    { Volumes: false, OnBuild: null }, { Volumes: null, OnBuild: "" }]) {
+    assert.throws(() => inspectImage({ ...image, Config: config }), DockerProbeError);
+  }
+});
+
 test("Docker Desktop Linux and WSL2 evidence is required; installed CLI alone is insufficient", () => {
   assert.deepEqual(inspectEngine(engine), { serverVersion: "28.1.0", wsl2KernelObserved: true });
   for (const value of [null, { ...engine, OSType: "windows" }, { ...engine, OperatingSystem: "remote engine" },
@@ -155,6 +162,17 @@ test("successful fixture is cleaned up but never changes Guard to Isolated", asy
   assert.ok(fake.calls.every((call) => !call.includes("pull") && !call.includes("prune")));
 });
 
+test("image query handles Docker 29 omitted OCI fields without dropping their validation", async () => {
+  const fake = fakeDocker();
+  assert.equal((await probeDocker(fake.run, nonce)).probe, "passed");
+  const query = fake.calls.find((call) => call[0] === "image")!;
+  assert.deepEqual(query.slice(0, 3), ["image", "inspect", "--format"]);
+  assert.ok(query[3].includes('{{json (index .Config "Volumes")}}'));
+  assert.ok(query[3].includes('{{json (index .Config "OnBuild")}}'));
+  assert.equal(query[4], LOCAL_NODE_IMAGE);
+  // Go-template semantics need the opt-in real-backend run, not this fake.
+});
+
 test("missing engine/image cannot create or launch anything and raw errors stay private", async () => {
   for (const fail of ["info", "inspect"]) {
     const fake = fakeDocker({ fail });
@@ -163,6 +181,22 @@ test("missing engine/image cannot create or launch anything and raw errors stay 
     assert.equal(report.cleanup, "not-needed");
     assert.ok(!fake.calls.some((call) => ["create", "start", "rm"].includes(call[1])));
     assert.doesNotMatch(JSON.stringify(report), /FAKE_PRIVATE/);
+  }
+});
+
+test("unsafe or incomplete normalized image config stops before container creation", async () => {
+  for (const config of [
+    { Volumes: { "/synthetic-volume": {} }, OnBuild: null },
+    { Volumes: null, OnBuild: ["RUN synthetic-hook"] },
+    { Volumes: null }, { OnBuild: null },
+  ]) {
+    const fake = fakeDocker();
+    const report = await probeDocker(async (args, signal) => args[0] === "image"
+      ? JSON.stringify({ ...image, Config: config }) : fake.run(args, signal), nonce);
+    assert.equal(report.probe, "blocked");
+    assert.equal(report.stage, "local-image");
+    assert.equal(report.cleanup, "not-needed");
+    assert.ok(!fake.calls.some((call) => ["create", "start", "rm"].includes(call[1])));
   }
 });
 
@@ -266,6 +300,7 @@ test("help has no effects; a Linux process cannot execute the Windows probe", as
   let output = "";
   const io = { out: (text: string) => { output += text; }, error: (text: string) => { output += text; } };
   assert.equal(await runDockerProbeCli(["--help"], io), 0);
+  assert.ok(output.startsWith(`Usage: ${process.platform === "win32" ? "npm.cmd" : "npm"} run guard:probe-docker -- `));
   assert.match(output, /NOT Guard acceptance/);
   if (process.platform !== "win32") {
     output = "";

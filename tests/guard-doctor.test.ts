@@ -34,6 +34,7 @@ test("help is informational and does not inspect the host", async () => {
   const code = await runDoctor(["--help"], output.io, async () => { collected = true; return report; });
   assert.equal(code, 0);
   assert.equal(collected, false);
+  assert.ok(output.stdout.join("").startsWith(`Usage: ${process.platform === "win32" ? "npm.cmd" : "npm"} run guard:doctor -- `));
   assert.match(output.stdout.join(""), /never launches pi or enables protection/);
 });
 
