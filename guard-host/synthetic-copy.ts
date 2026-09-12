@@ -172,6 +172,13 @@ export async function createSyntheticSource(root: string): Promise<void> {
   }
 }
 
+/** Independent verifier for controller-created literals only; NOT part of admission. */
+export async function verifySyntheticSource(root: string): Promise<void> {
+  for (const [path, content] of Object.entries({ ...SHARED_FILES, ...EXCLUDED_FILES })) {
+    requireCopy(await readFile(join(root, ...path.split("/")), "utf8") === content, "COPY_SOURCE_MUTATED");
+  }
+}
+
 export const COPY_CHECK_IDS = [
   "explicitFileSet", "manifestHashes", "excludedEntriesAbsent", "copyBytesMatch",
   "copyEditDetached", "copyDeleteDetached", "sourceFixturesUnchanged",
@@ -225,9 +232,7 @@ export async function probeSyntheticCopy(): Promise<SyntheticCopyReport> {
     report.checks.push("copyDeleteDetached");
     // Independent host-side verifier reads its OWN literal canaries, not personal
     // files. These reads are separate from admission, which never opens exclusions.
-    for (const [path, content] of Object.entries({ ...SHARED_FILES, ...EXCLUDED_FILES })) {
-      requireCopy(await readFile(join(source, ...path.split("/")), "utf8") === content, "COPY_SOURCE_MUTATED");
-    }
+    await verifySyntheticSource(source);
     report.checks.push("sourceFixturesUnchanged");
     report.probe = "passed";
     report.stage = "complete";

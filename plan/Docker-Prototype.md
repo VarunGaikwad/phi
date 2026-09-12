@@ -27,7 +27,9 @@ The operator subsequently deferred provider/authentication-method and gateway
 work. A separate [host-only synthetic-copy experiment](Synthetic-Copy-Prototype.md)
 passed seven checks and cleanup. It is not connected to this container fixture,
 not a production admission service, and not whole-agent or NTFS race-safety proof.
-Continue independent offline work; retain the gateway requirement as pending.
+The subsequent [offline whole-agent runner](Offline-Agent-Prototype.md) now
+implements an integrated experiment, with local unit/syntax coverage only; its
+native Windows/Docker run remains pending. Retain gateway acceptance as deferred.
 
 ## What has been implemented
 

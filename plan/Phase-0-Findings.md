@@ -3,7 +3,27 @@
 Companions: [execution queue](Execution-Order.md), [Guard](Guard-Plan.md),
 [Modes](Modes-Plan.md), [TUI](TUI-Plan.md).
 
-## Current continuation: provider deferred, offline copy fixture passed
+## Current continuation: offline whole-agent runner prepared, native run pending
+
+This continuation is back on **Linux / Node 24.17.0**, without Docker or a Windows
+shell on PATH. The previously confirmed Windows setup does not need reconfirmation.
+No new Docker or pi runtime was started here and no credentials were inspected.
+
+The opt-in `guard:probe-agent` runner now implements pinned runtime transfer over
+stdin, a synthetic sanitized copy, an offline pi SDK/tool/inline-extension sequence,
+detached-child checks, host-owned stop, independent synthetic host verification and
+ownership-checked cleanup. The guest-only bundled-SDK distribution adapter and all
+real-runtime checks remain **unverified**. See [Offline Agent Prototype](Offline-Agent-Prototype.md)
+for exact effects, runtime inventory, limits and the native PowerShell command.
+
+Typecheck and doctor CLI smoke passed; **79 tests passed, 1 Windows ADS case skipped,
+0 failed** (80 cases). New tests use fakes, an in-memory bootstrap filesystem,
+fixed pinned artifact reads and syntax-only checks; they do not execute pi or
+network probes. Actual doctor and agent-probe invocations return **exit 2 / Locked**
+on this host. No full phase gate advanced. Gateway work remains deferred; private
+classifications stay local, and production admission/apply/containment are pending.
+
+## Earlier continuation: provider deferred, offline copy fixture passed
 
 The operator deferred provider/authentication-method selection and gateway work.
 Do not ask for those details again while continuing independent offline checks.
@@ -178,7 +198,9 @@ project, launch pi, pull images, or create a production Guard permission grant.
 Fakes test policy, lifecycle, cancellation, malformed settings, and cleanup; local
 Node subprocess tests verify bounded output and direct argument handling. The
 real native Windows Node fixture has now completed successfully and been removed;
-no whole-agent container has been implemented or started.
+no whole-agent container had been implemented or started in that earlier work.
+The current continuation implements an opt-in offline runner but still has no
+whole-agent Docker execution evidence.
 
 ## Initial validation (Linux, historical)
 
@@ -207,8 +229,8 @@ tarball acceptance, or independent security review. The smoke script is currentl
 platform/toolchain questions are answered, and installed Windows/runtime versions
 are now observed. The separately approved image download and primitive fixture
 have passed on the confirmed Windows 11 Home setup. Continue the whole-agent
-backend proof with an offline whole-agent runtime, synthetic copies and host
-canaries. Keep provider identity/authentication method and gateway validation
+backend proof by running the newly implemented offline whole-agent fixture with
+synthetic copies and host canaries on native Windows. Keep provider identity/authentication method and gateway validation
 **deferred / pending** until revisited; an offline deterministic provider cannot
 satisfy gateway acceptance. Neither the Docker Node fixture nor the separate
 host-side copy fixture satisfies the complete gate. Record the exact tested product/version/config

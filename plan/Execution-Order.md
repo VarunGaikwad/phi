@@ -2,7 +2,7 @@
 
 ## Status
 
-**Guard Phase 0 is in progress. The native Windows Docker Node fixture passed all 10 checks and cleanup. A separate host-only synthetic-copy fixture passed 7 checks and cleanup. Provider/gateway work is deferred at the operator's request, not passed. Whole-agent/backend acceptance remains pending. The three plans are NOT complete.**
+**Guard Phase 0 is in progress. The native Windows Docker Node fixture passed all 10 checks and cleanup; the separate host-only copy fixture passed 7. An opt-in offline whole-agent/copy runner is now implemented and locally unit-tested, but its Docker/native Windows run is pending. Provider/gateway work remains deferred, not passed. No full gate has advanced. The three plans are NOT complete.**
 
 All three source plans have been read in full. They are companion requirements,
 not independent jobs to run alphabetically. Their dependency order is **Guard →
@@ -22,7 +22,7 @@ before production work to avoid building on an unsupported backend or layout.
 
 | Order | Source phase | Deliverable / exit gate | Current status |
 |---|---|---|---|
-| 01 | [Guard](Guard-Plan.md) 0 | Select and prove a Windows-compatible whole-agent backend, sanitized-copy workflow, fake-credential gateway, and synthetic containment checks | **Primitive and host-only copy fixtures passed** separately on Windows; whole-agent/copy integration pending; gateway deferred, not passed |
+| 01 | [Guard](Guard-Plan.md) 0 | Select and prove a Windows-compatible whole-agent backend, sanitized-copy workflow, fake-credential gateway, and synthetic containment checks | **Primitive and host-only copy fixtures passed** separately on Windows; offline whole-agent/copy runner implemented, native run pending; gateway deferred, not passed |
 | 02 | [Modes](Modes-Plan.md) 0 | Demonstrate tool provenance/exclusions, restricted tools, plan-writer prototype, and Windows check-runner behavior | Pending 01 |
 | 03 | [TUI](TUI-Plan.md) 0 | Audit/prototype public layout APIs, test terminal behavior, obtain supported layout/overlay approval | Pending 02; terminal/layout decisions also outstanding |
 | 04 | Guard 1 | Deny-by-default policy, link-safe admission manifest/export, policy revisions, protocol validation, private audit | Pending 01–03 |
@@ -70,6 +70,10 @@ layout monkey-patching is authorized by this schedule.
 | G0-D18 | Defer provider/gateway work as requested; investigate offline SDK startup | Provider/authentication-method selection and gateway proof stay pending. Installed pi 0.85.1 SDK/resource/provider documentation and distribution metadata reviewed; no pi runtime launched, dependencies installed or credentials inspected. |
 | G0-D19 | Implement the separate offline synthetic-copy experiment | `guard-host/synthetic-copy.ts`, `probe-copy.ts`, `tests/guard-copy.test.ts`; fixed synthetic source, three-file allowlist, bounded hash-checked packet, fresh copy, no host apply. This is not a production importer or Windows race-safe admission. [Scope and evidence](Synthetic-Copy-Prototype.md). |
 | G0-D20 | Run the copy fixture and native Windows regression checks | Copy CLI exit **0**, all **7 checks passed**, cleanup **removed**. Actual synthetic hard-link/junction and alternate-stream cases passed. Typecheck and doctor CLI smoke passed; **63 tests passed, 1 POSIX-only skip, 0 failed**. No new Docker or pi runtime run; no full gate advanced. |
+| G0-D21 | Reinspect the continuation host and version-matched SDK/distribution | Current session is Linux / Node **24.17.0**, without Docker or a Windows shell on PATH. Public SDK/resource/provider APIs and published bundle dependencies reviewed. No pi runtime or credentials loaded. |
+| G0-D22 | Implement pinned, bounded runtime transfer preparation | `agent-runtime.ts`, `agent-runtime-inventory.json`: 382 fixed vendor files, 9,591,638 original bytes; no whole dependency-tree copy, downloads, installs, or host pi import. Guest-only bundled-SDK metadata adapter is experimental, not runtime-proven. |
+| G0-D23 | Implement the opt-in offline whole-agent/copy runner | `agent-spec.ts`, `agent-probe.ts`, `probe-agent.ts`, `guest/offline-agent.ts`; stdin transfer, synthetic snapshot/canaries, real SDK tool/inline-extension sequence, detached child, independent effects/host checks, engine stop and ownership-checked cleanup. **Implementation only; actual run pending.** [Scope/runbook](Offline-Agent-Prototype.md). |
+| G0-D24 | Validate locally without a host-pi fallback | Typecheck and doctor CLI smoke passed; **79 tests passed, 1 Windows ADS skip, 0 failed**. New coverage uses Docker fakes, an in-memory bootstrap filesystem, pinned artifact reads and syntax-only checks. Doctor and agent probe return exit **2 / Locked** here. No Docker/pi runtime or network probe executed; no gate advanced. |
 
 These are **preparatory Phase 0 subtasks**, not substitutes for the original Guard
 Phase 0 exit criteria. None of the original unchecked backend, isolation, Windows,
@@ -91,13 +95,14 @@ Do not ask to reconfirm the supplied setup.
 
 The operator has now **deferred provider/authentication-method and gateway work**.
 Continue independent offline work without prompting for those details again. The
-new [host-only synthetic-copy experiment](Synthetic-Copy-Prototype.md) passed its
-seven checks, but it is not integrated with the container or pi, and does not
-prove production admission or NTFS race safety.
+[host-only synthetic-copy experiment](Synthetic-Copy-Prototype.md) passed seven
+checks separately. The new [offline whole-agent experiment](Offline-Agent-Prototype.md)
+implements the proposed integration, but has **not been executed in Docker or on
+native Windows**. Neither production admission nor NTFS race safety is proven.
 
 To continue order 01:
 
-1. Prototype **whole-agent offline launch with a synthetic sanitized copy**, clean startup/resources/environment, and the remaining independent synthetic host read/write, network, lifecycle and stop checks. Neither existing fixture advances the full gate. Do not reuse the copy helper as a production importer.
+1. Review and run the new **offline whole-agent/synthetic-copy experiment on native Windows** using the [runbook](Offline-Agent-Prototype.md). This Linux continuation cannot perform that acceptance run. Runtime compatibility and all 20 expected combined checks/cleanup are pending; fix failures without relaxing restrictions or launching pi on the host. Broader network, lifecycle and controller-loss checks remain afterward. Do not reuse the copy helper as a production importer.
 2. Keep fake-credential gateway acceptance explicitly **deferred / pending**. When revisited, establish the intended provider identity and authentication **method**, never keys/tokens/auth files. A deterministic offline provider cannot substitute for this proof.
 3. Finalize protected categories/additional private paths **locally**. Do not paste private names or contents into model context.
 4. Windows build, installed Desktop/CLI and WSL versions, non-elevated process status, engine/kernel and image identity are recorded. Verify remaining active settings/constraints and the whole-agent toolchain before selecting a supported backend. No further downloads, installations, mounts or settings changes are implicitly approved.
@@ -112,7 +117,8 @@ proven public-API dock or the explicitly described on-demand inspector fallback.
 
 One explicitly approved official Node Docker image was downloaded and retained;
 one synthetic Node container completed and was removed. Subsequent host-only copy
-fixtures created and removed only disposable synthetic data. No npm dependencies,
-virtualization settings, project trust, host permissions, terminal settings,
-credentials or publishing configuration were changed. No protected **pi** runtime
+fixtures created and removed only disposable synthetic data. The latest Linux
+continuation added/tested offline-runner code but started no Docker or pi runtime.
+No npm dependencies, virtualization settings, project trust, host permissions,
+terminal settings, credentials or publishing configuration were changed. No protected **pi** runtime
 has been started; **the current pi process is not protected by these changes**.

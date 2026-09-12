@@ -115,14 +115,14 @@ export function ownedContainer(value: unknown, nonce: string, imageId: string): 
   return info.Id;
 }
 
-/** Independent engine inspection before start; no trust in create arguments alone. */
-export function inspectFixture(value: unknown, nonce: string, imageId: string): string {
+/** Shared fixture restrictions, checked before start and optionally while running. */
+export function inspectFixture(value: unknown, nonce: string, imageId: string, command: readonly string[] = fixtureCommand(nonce), expectedState: "created" | "running" = "created"): string {
   const info = object(value);
   const id = ownedContainer(info, nonce, imageId);
   const config = object(info.Config);
   const host = object(info.HostConfig);
-  requireProbe(object(info.State).Status === "created", "DOCKER_UNEXPECTED_CONTAINER_STATE");
-  requireProbe(config.User === "1000:1000" && config.WorkingDir === "/workspace" && same(config.Entrypoint, ["/usr/bin/env"]) && same(config.Cmd, fixtureCommand(nonce)), "DOCKER_COMMAND_MISMATCH");
+  requireProbe(object(info.State).Status === expectedState, "DOCKER_UNEXPECTED_CONTAINER_STATE");
+  requireProbe(config.User === "1000:1000" && config.WorkingDir === "/workspace" && same(config.Entrypoint, ["/usr/bin/env"]) && same(config.Cmd, command), "DOCKER_COMMAND_MISMATCH");
   requireProbe(empty(config.Volumes) && same(object(config.Healthcheck).Test, ["NONE"]), "DOCKER_IMAGE_EFFECTS_DENIED");
   requireProbe(host.Privileged === false && host.ReadonlyRootfs === true && same(host.CapDrop, ["ALL"]) && empty(host.CapAdd) && same(host.SecurityOpt, ["no-new-privileges=true"]), "DOCKER_PRIVILEGE_POLICY_MISMATCH");
   requireProbe(host.NetworkMode === "none" && host.IpcMode === "private" && host.CgroupnsMode === "private" && host.PidMode === "" && host.UTSMode === "" && host.UsernsMode === "" && host.Runtime === "runc", "DOCKER_NAMESPACE_POLICY_MISMATCH");

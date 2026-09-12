@@ -147,8 +147,10 @@ project execution occurred in this continuation.
   `node_modules` or mounting the checkout is not an approved shortcut. No pi
   dependency or bundled entry point was executed during this investigation.
 
-Next: build and test the **whole-agent offline container experiment** with clean
-startup/resources/environment and a synthetic admitted snapshot. A deterministic
+The subsequent [offline whole-agent runner](Offline-Agent-Prototype.md) now
+implements that integration and has local unit/syntax coverage, but no actual
+Docker/native Windows run yet. Next: execute its opt-in fixture on native Windows
+with clean startup/resources/environment and a synthetic admitted snapshot. A deterministic
 provider can exercise agent/tool behavior without choosing or authenticating a
 real provider; it cannot prove gateway or streaming/OAuth compatibility. Keep
 provider/gateway acceptance deferred and the full Guard Phase 0 gate incomplete.

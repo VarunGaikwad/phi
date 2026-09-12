@@ -6,7 +6,8 @@ Implementation of the [Guard](plan/Guard-Plan.md), [Modes](plan/Modes-Plan.md), 
 
 **Current status: Guard Phase 0 prototype; the native Windows Docker Node fixture
 passed all ten checks and cleanup. A separate host-only synthetic-copy fixture also
-passes. Provider/gateway testing is deferred; whole-agent/backend acceptance remains pending. No
+passes. An offline whole-agent runner is now implemented and unit-tested; its native
+Windows/Docker run is pending. Provider/gateway testing remains deferred. No
 protection, workflow modes, theme, or PHI terminal UI is active. This checkout is
 not yet an install-ready pi package.**
 The manifest's future `extensions/phi.ts` and `themes/phi.json` entry points remain
@@ -67,6 +68,24 @@ npm.cmd run --silent guard:probe-copy -- --confirm --json
 The native Windows run passed **7 checks and cleanup**, still Locked. See
 [Synthetic Copy Prototype](plan/Synthetic-Copy-Prototype.md) for effects and limits.
 
+## Next opt-in check: offline whole agent
+
+`guard:probe-agent` transfers pinned pi runtime files and a synthetic copy into the
+same hardened container profile, without host mounts or credential imports. It is
+designed to exercise the agent loop, tools, an inline extension, a detached child,
+host stop and cleanup. **The actual Windows/Docker run has not happened.**
+
+Read [Offline Agent Prototype](plan/Offline-Agent-Prototype.md) before running:
+
+```powershell
+$docker = (Get-Command docker.exe -CommandType Application).Source
+npm.cmd run --silent guard:probe-agent -- --docker "$docker" --confirm --json
+```
+
+Use a trusted installed Docker CLI. No downloads, installs, real-project admission
+or host apply are performed. The command refuses non-Windows execution and never
+launches pi on the host. Even success leaves Guard locked; gateway work is deferred.
+
 ## Development checks
 
 Using the existing checkout's development dependencies:
@@ -88,10 +107,11 @@ The operator-approved official Node image was downloaded, a Docker 29 metadata
 query issue was fixed, and the native fixture passed **10 checks** with verified
 container removal. The approved image remains in Docker's local store. See
 [Windows fixture pass evidence](plan/Windows-Docker-Fixture-Pass.md).
-After the separate copy experiment, typecheck and CLI smoke passed;
-**63 tests passed, 1 POSIX-only test skipped, 0 failed**.
+Latest Linux validation after implementing the offline runner: typecheck and doctor
+CLI smoke passed; **79 tests passed, 1 Windows ADS test skipped, 0 failed**. These
+include mocked Docker and syntax-only guest checks, not a pi/container launch.
 
-Next is whole-agent **offline** startup and sanitized-copy integration. The
+Next is the native Windows run of whole-agent **offline** startup and copy integration. The
 operator deferred provider/authentication-method and gateway work; it stays
 pending, not passed, and need not be selected for independent offline checks.
 Private path classifications stay local. VM/container isolation and reviewed
