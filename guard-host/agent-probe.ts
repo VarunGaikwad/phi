@@ -77,7 +77,7 @@ export async function probeOfflineAgent(
     report.checks = [...AGENT_CHECK_IDS];
     report.stage = "independent-effects";
     const effects = object(json(await checked(["container", "exec", "--workdir=/workspace", id,
-      "/usr/bin/env", ...agentEnvironment(), "/usr/local/bin/node", "-e", VERIFY_AGENT_EFFECTS])));
+      "/usr/bin/env", ...agentEnvironment(), "/usr/local/bin/node", "-e", VERIFY_AGENT_EFFECTS, nonce])));
     requireProbe(Object.keys(effects).join(",") === "verified" && effects.verified === true, "AGENT_EFFECTS_UNCONFIRMED");
     report.checks.push("independentGuestEffects");
     report.stage = "host-stop";

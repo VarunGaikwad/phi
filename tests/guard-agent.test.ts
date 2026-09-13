@@ -92,7 +92,7 @@ test("offline fixture shares all primitive restrictions and independently checks
   assert.throws(() => inspectAgentFixture(wrong, nonce, imageId), DockerProbeError);
 });
 
-test("all 17 guest checks and current nonce are required, with no extra fields", () => {
+test("all 32 guest checks and current nonce are required, with no extra fields", () => {
   inspectAgentResult(result, nonce);
   for (const value of [{ ...result, nonce: "stale" }, { ...result, checks: { ...result.checks, agentLoop: false } },
     { ...result, checks: { ...result.checks, extra: true } }, { ...result, privateData: "FAKE_PRIVATE" }, null]) {
@@ -110,7 +110,7 @@ test("mock success requires effects, engine stop, source verification and remova
   assert.equal(report.protection, "not-active");
   assert.equal(report.state, "locked");
   assert.equal(report.gateway, "deferred");
-  assert.equal(report.checks.length, 20);
+  assert.equal(report.checks.length, 35);
   assert.equal(verified, true);
   assert.deepEqual(mock.calls.find((call) => call[1] === "kill"), ["container", "kill", "--signal=KILL", id]);
   assert.ok(mock.calls.every((call) => !call.includes("pull") && !call.includes("prune") && !call.includes("cp")));

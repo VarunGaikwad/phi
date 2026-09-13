@@ -1,0 +1,2575 @@
+{
+  "observedAt": "2026-09-12T21:55:06.988Z",
+  "sourceSha256": "246fee313a06f007049321f85745485e3b28e8698624b94d59fa6fa33a89ab73",
+  "result": {
+    "version": 1,
+    "kind": "dotnet-pipe-static-metadata",
+    "state": "locked",
+    "protection": "not-active",
+    "canLaunch": false,
+    "executable": false,
+    "gateway": "deferred",
+    "scope": "installed-assembly-static-analysis-only",
+    "targetSha256": "8e1285a55eb5d1091947b60856bdf3a29b4f65e6e3d043f7b0e96b08b2d2ca29",
+    "readerPins": {
+      "System.Runtime.CompilerServices.Unsafe.dll": "37768488e8ef45729bc7d9a2677633c6450042975bb96516e186da6cb9cd0dcf",
+      "System.Buffers.dll": "accccfbe45d9f08ffeed9916e37b33e98c65be012cfff6e7fa7b67210ce1fefb",
+      "System.Memory.dll": "bf3fb84664f4097f1a8a9bc71a51dcf8cf1a905d4080a4d290da1730866e856f",
+      "System.Collections.Immutable.dll": "d5ec0837bb176abf13dcd52c658c4e84c5264f67065b9c19679b6643f7d21564",
+      "System.Reflection.Metadata.dll": "f79ea5e38af769cbde5d7f5e873564708941a148bb461472019e10373ea4c780"
+    },
+    "targetSignature": "Valid / Microsoft",
+    "readerSignatures": "Valid / Microsoft",
+    "powershell": "5.1.26100.9444",
+    "clr": "4.0.30319.42000",
+    "targetRuntime": "8.0.15",
+    "targetAssemblyVersion": "8.0.0.0",
+    "fields": [
+      {
+        "name": "None",
+        "bytes": "AAAAAA=="
+      },
+      {
+        "name": "WriteThrough",
+        "bytes": "AAAAgA=="
+      },
+      {
+        "name": "Asynchronous",
+        "bytes": "AAAAQA=="
+      },
+      {
+        "name": "CurrentUserOnly",
+        "bytes": "AAAAIA=="
+      },
+      {
+        "name": "FirstPipeInstance",
+        "bytes": "AAAIAA=="
+      }
+    ],
+    "imports": [
+      {
+        "method": "Kernel32::GetCurrentProcess",
+        "entryPoint": "GetCurrentProcess",
+        "module": "kernel32.dll",
+        "signature": "AAAY"
+      },
+      {
+        "method": "Kernel32::GetCurrentThreadId",
+        "entryPoint": "GetCurrentThreadId",
+        "module": "kernel32.dll",
+        "signature": "AAAI"
+      },
+      {
+        "method": "Kernel32::<CloseHandle>g____PInvoke|0_0",
+        "entryPoint": "CloseHandle",
+        "module": "kernel32.dll",
+        "signature": "AAEIGA=="
+      },
+      {
+        "method": "Kernel32::<DuplicateHandle>g____PInvoke|20_0",
+        "entryPoint": "DuplicateHandle",
+        "module": "kernel32.dll",
+        "signature": "AAcIGBgYDxgJCAk="
+      },
+      {
+        "method": "Kernel32::<GetFileType>g____PInvoke|21_0",
+        "entryPoint": "GetFileType",
+        "module": "kernel32.dll",
+        "signature": "AAEIGA=="
+      },
+      {
+        "method": "Kernel32::<CreatePipe>g____PInvoke|22_0",
+        "entryPoint": "CreatePipe",
+        "module": "kernel32.dll",
+        "signature": "AAQIDxgPGA8REAg="
+      },
+      {
+        "method": "Kernel32::<ConnectNamedPipe>g____PInvoke|23_0",
+        "entryPoint": "ConnectNamedPipe",
+        "module": "kernel32.dll",
+        "signature": "AAIIGA8RKQ=="
+      },
+      {
+        "method": "Kernel32::<ConnectNamedPipe>g____PInvoke|24_0",
+        "entryPoint": "ConnectNamedPipe",
+        "module": "kernel32.dll",
+        "signature": "AAIIGBg="
+      },
+      {
+        "method": "Kernel32::<WaitNamedPipe>g____PInvoke|25_0",
+        "entryPoint": "WaitNamedPipeW",
+        "module": "kernel32.dll",
+        "signature": "AAIIDwcI"
+      },
+      {
+        "method": "Kernel32::<GetNamedPipeHandleStateW>g____PInvoke|26_0",
+        "entryPoint": "GetNamedPipeHandleStateW",
+        "module": "kernel32.dll",
+        "signature": "AAcIGA8JDwkPCQ8JDwMJ"
+      },
+      {
+        "method": "Kernel32::<GetNamedPipeInfo>g____PInvoke|27_0",
+        "entryPoint": "GetNamedPipeInfo",
+        "module": "kernel32.dll",
+        "signature": "AAUIGA8JDwkPCQ8J"
+      },
+      {
+        "method": "Kernel32::<SetNamedPipeHandleState>g____PInvoke|28_0",
+        "entryPoint": "SetNamedPipeHandleState",
+        "module": "kernel32.dll",
+        "signature": "AAQIGA8IGBg="
+      },
+      {
+        "method": "Kernel32::<CancelIoEx>g____PInvoke|29_0",
+        "entryPoint": "CancelIoEx",
+        "module": "kernel32.dll",
+        "signature": "AAIIGA8RKQ=="
+      },
+      {
+        "method": "Kernel32::<FlushFileBuffers>g____PInvoke|31_0",
+        "entryPoint": "FlushFileBuffers",
+        "module": "kernel32.dll",
+        "signature": "AAEIGA=="
+      },
+      {
+        "method": "Kernel32::<ReadFile>g____PInvoke|32_0",
+        "entryPoint": "ReadFile",
+        "module": "kernel32.dll",
+        "signature": "AAUIGA8FCA8IGA=="
+      },
+      {
+        "method": "Kernel32::<ReadFile>g____PInvoke|33_0",
+        "entryPoint": "ReadFile",
+        "module": "kernel32.dll",
+        "signature": "AAUIGA8FCBgPESk="
+      },
+      {
+        "method": "Kernel32::<WriteFile>g____PInvoke|35_0",
+        "entryPoint": "WriteFile",
+        "module": "kernel32.dll",
+        "signature": "AAUIGA8FCA8IGA=="
+      },
+      {
+        "method": "Kernel32::<WriteFile>g____PInvoke|36_0",
+        "entryPoint": "WriteFile",
+        "module": "kernel32.dll",
+        "signature": "AAUIGA8FCBgPESk="
+      },
+      {
+        "method": "Kernel32::<DisconnectNamedPipe>g____PInvoke|38_0",
+        "entryPoint": "DisconnectNamedPipe",
+        "module": "kernel32.dll",
+        "signature": "AAEIGA=="
+      },
+      {
+        "method": "Kernel32::<CreateNamedPipe>g____PInvoke|39_0",
+        "entryPoint": "CreateNamedPipeW",
+        "module": "kernel32.dll",
+        "signature": "AAgYDwcICAgICAgPERA="
+      },
+      {
+        "method": "Kernel32::<CreateNamedPipeClient>g____PInvoke|41_0",
+        "entryPoint": "CreateFileW",
+        "module": "kernel32.dll",
+        "signature": "AAcYDwcIETUPERAROQgY"
+      },
+      {
+        "method": "Kernel32::<LoadLibraryEx>g____PInvoke|44_0",
+        "entryPoint": "LoadLibraryExW",
+        "module": "kernel32.dll",
+        "signature": "AAMYDwcYCA=="
+      },
+      {
+        "method": "Kernel32::<OpenThread>g____PInvoke|46_0",
+        "entryPoint": "OpenThread",
+        "module": "kernel32.dll",
+        "signature": "AAMYCAgI"
+      },
+      {
+        "method": "Kernel32::<CancelSynchronousIo>g____PInvoke|47_0",
+        "entryPoint": "CancelSynchronousIo",
+        "module": "kernel32.dll",
+        "signature": "AAEIGA=="
+      },
+      {
+        "method": "Advapi32::<RevertToSelf>g____PInvoke|0_0",
+        "entryPoint": "RevertToSelf",
+        "module": "advapi32.dll",
+        "signature": "AAAI"
+      },
+      {
+        "method": "Advapi32::<ImpersonateNamedPipeClient>g____PInvoke|1_0",
+        "entryPoint": "ImpersonateNamedPipeClient",
+        "module": "advapi32.dll",
+        "signature": "AAEIGA=="
+      }
+    ],
+    "methods": [
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": ".ctor",
+        "token": 100663441,
+        "attributes": 6278,
+        "signature": "IAEBDg==",
+        "il": "AnKZCwBwAxkWFhYolgAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": ".ctor",
+        "token": 100663442,
+        "attributes": 6278,
+        "signature": "IAIBDg4=",
+        "il": "AgMEGRYWFiiWAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": ".ctor",
+        "token": 100663443,
+        "attributes": 6278,
+        "signature": "IAMBDg4RYA==",
+        "il": "AgMEBRYWFiiWAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": ".ctor",
+        "token": 100663444,
+        "attributes": 6278,
+        "signature": "IAQBDg4RYBFk",
+        "il": "AgMEBQ4EFhYolgAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": ".ctor",
+        "token": 100663445,
+        "attributes": 6278,
+        "signature": "IAUBDg4RYBFkEYEd",
+        "il": "AgMEBQ4EDgUWKJYAAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": ".ctor",
+        "token": 100663446,
+        "attributes": 6278,
+        "signature": "IAYBDg4RYBFkEYEdEYEN",
+        "il": "AgUWKNIAAAYEcp0LAHAohQAACgNyrwsAcCh3AAAKA2+GAAAKLQsoOQAABnOHAAAKeg4EIP///x9fLBByxQsAcCg/AAAGc3wAAAp6DgUWMgUOBRoxEHLVCwBwKD4AAAZzfAAACnoOBhYyBQ4GFzEQcnkLAHAoQAAABnN8AAAKeg4EIAAAACBfLAcCFyjxAAAGAgMEKAABAAZ9IwAABAIFfScAAAQCDgZ9JgAABAIOBX0kAAAEAg4EfSUAAAQq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": ".ctor",
+        "token": 100663447,
+        "attributes": 6278,
+        "signature": "IAQBEWACAhKApA==",
+        "il": "AgMWKNIAAAYOBHL7CgBwKHcAAAoOBG8jAAAKLBAoOgAABnL7CgBwc3kAAAp6DgQoAQEABgIOBBcEKNUAAAYFLAcCFyjvAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "Finalize",
+        "token": 100663448,
+        "attributes": 196,
+        "signature": "IAAB",
+        "il": "AhZvegAACt4HAih7AAAK3Co="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "Connect",
+        "token": 100663449,
+        "attributes": 134,
+        "signature": "IAAB",
+        "il": "AhUomgAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "Connect",
+        "token": 100663450,
+        "attributes": 134,
+        "signature": "IAEBCA==",
+        "il": "AiikAAAGAxVy+wsAcCgHAAArAgMoRQAACiiJAAAKKJwAAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "Connect",
+        "token": 100663451,
+        "attributes": 134,
+        "signature": "IAEBEYEl",
+        "il": "AgMoogAABiiaAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "ConnectInternal",
+        "token": 100663452,
+        "attributes": 129,
+        "signature": "IAMBCBF1CA==",
+        "il": "FgoSAf4VLgAAAQ8CKDsAAAoDFS4FAwZZKwIfMgwPAig6AAAKLAgIHzIxAx8yDAIIKKUAAAYsASoSAShJAAAKAxUuxyiJAAAKBVklCgMyu3OKAAAKeg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "ConnectAsync",
+        "token": 100663453,
+        "attributes": 134,
+        "signature": "IAASaQ==",
+        "il": "AhUoRQAACiigAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "ConnectAsync",
+        "token": 100663454,
+        "attributes": 134,
+        "signature": "IAESaQg=",
+        "il": "AgMoRQAACiigAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "ConnectAsync",
+        "token": 100663455,
+        "attributes": 134,
+        "signature": "IAESaRF1",
+        "il": "AhUDKKAAAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "ConnectAsync",
+        "token": 100663456,
+        "attributes": 134,
+        "signature": "IAISaQgRdQ==",
+        "il": "AiikAAAGAxVy+wsAcCgHAAArDwIoPwAACiwHBCiLAAAKKiiJAAAKCihEAAAKfikAAAQlLRcmfigAAAT+BqsAAAZzPAAACiWAKQAABAIDBAZzjAAACowPAAAbBB4oRgAACm9HAAAKKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "ConnectAsync",
+        "token": 100663457,
+        "attributes": 134,
+        "signature": "IAISaRGBJRF1",
+        "il": "AgMoogAABgQooAAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "ToTimeoutMilliseconds",
+        "token": 100663458,
+        "attributes": 145,
+        "signature": "AAEIEYEl",
+        "il": "DwAojQAACmoKBhVqcvsLAHAoCAAAKwYg////f2py+wsAcCgJAAArBmkq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "CheckPipePropertyOperations",
+        "token": 100663459,
+        "attributes": 197,
+        "signature": "IAAB",
+        "il": "AijrAAAGAijuAAAGLQsoQgAABnOPAAAKegIo7gAABhgzCyhRAAAGc20AAAp6Kg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "CheckConnectOperationsClient",
+        "token": 100663460,
+        "attributes": 129,
+        "signature": "IAAB",
+        "il": "AijuAAAGFzMLKEYAAAZzjwAACnoCKO4AAAYaMwYocgAABnoq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "TryConnect",
+        "token": 100663461,
+        "attributes": 129,
+        "signature": "IAECCA==",
+        "il": "AnsmAAAEKA8BAAYKAnslAAAEIP///99fCwJ7JAAABCwWByAAABAAYAsHAnskAAAEF1kfEGJgCxYMFwJ7JwAABF8sCAggAAAAgGAMGAJ7JwAABF8sCAggAAAAQGAMAnsjAAAEEgAHCCioAAAGDQlvIwAACjmbAAAAKEgAAAoTBAlvJAAAChEEGDMCFioRBCDnAAAALg0RBHKXCwBwKHgAAAZ6AnsjAAAEAygIAAAGLSEoSAAAChMEEQQYLgYRBB95MwIWKhEEcpcLAHAoeAAABnoCeyMAAAQSAAcIKKgAAAYNCW8jAAAKLCooSAAAChMECW8kAAAKEQQg5wAAAC4FEQQYMwIWKhEEcpcLAHAoeAAABnoCCRYCeyUAAAQgAAAAQF8W/gMo1QAABgIXKO8AAAYCKKcAAAYXKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "get_NumberOfServerInstances",
+        "token": 100663462,
+        "attributes": 2182,
+        "signature": "IAAI",
+        "il": "Am/rAAAGAijhAAAGFuASAOAW4BbgFuAWKAkAAAYtDAIoSAAACigSAQAGegYq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "ValidateRemotePipeUser",
+        "token": 100663463,
+        "attributes": 129,
+        "signature": "IAAB",
+        "il": "AijwAAAGLQEqAig6AQAGCgbQTwAAASgeAAAKb5AAAAoLKJEAAAoMCG+SAAAKDQcJKJMAAAosEgIaKO8AAAYoXwAABnNxAAAKet4KCCwGCG+UAAAK3Co="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeClientStream",
+        "name": "<TryConnect>g__CreateNamedPipeClient|26_0",
+        "token": 100663464,
+        "attributes": 147,
+        "signature": "AAQSgKQOEBEQCAg=",
+        "il": "AgUWAxkEfpUAAAooFAAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": ".ctor",
+        "token": 100663468,
+        "attributes": 6278,
+        "signature": "IAEBDg==",
+        "il": "AgMZFxYWFhYWKLIAAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": ".ctor",
+        "token": 100663469,
+        "attributes": 6278,
+        "signature": "IAIBDhFg",
+        "il": "AgMEFxYWFhYWKLIAAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": ".ctor",
+        "token": 100663470,
+        "attributes": 6278,
+        "signature": "IAMBDhFgCA==",
+        "il": "AgMEBRYWFhYWKLIAAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": ".ctor",
+        "token": 100663471,
+        "attributes": 6278,
+        "signature": "IAQBDhFgCBGAhA==",
+        "il": "AgMEBQ4EFhYWFiiyAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": ".ctor",
+        "token": 100663472,
+        "attributes": 6278,
+        "signature": "IAUBDhFgCBGAhBFk",
+        "il": "AgMEBQ4EDgUWFhYosgAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": ".ctor",
+        "token": 100663473,
+        "attributes": 6278,
+        "signature": "IAcBDhFgCBGAhBFkCAg=",
+        "il": "AgMEBQ4EDgUOBg4HFiiyAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": ".ctor",
+        "token": 100663474,
+        "attributes": 6273,
+        "signature": "IAgBDhFgCBGAhBFkCAgRgQ0=",
+        "il": "AgQOBA4HKNMAAAYCAwQFDgQOBQ4GDgcOCCizAAAGAgMEBQ4EDgUOBg4HDggovgAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "ValidateParameters",
+        "token": 100663475,
+        "attributes": 129,
+        "signature": "IAgBDhFgCBGAhBFkCAgRgQ0=",
+        "il": "A3KdCwBwKIUAAAoEFzIEBBkxEHILDABwKD0AAAZzfAAACnoOBBYyBQ4EFzEQch8MAHAoPAAABnN8AAAKeg4FIP//9x9fLBByxQsAcCg/AAAGc3wAAAp6DgZyQQwAcCgKAAArDgdyWwwAcCgKAAArBRcyCAUg/gAAADEUBRUuEHJ3DABwKEEAAAZzfAAACnoOCBYyBQ4IFzEQcnkLAHAoQAAABnN8AAAKeg4FIAAAACBfLAcCFyjxAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": ".ctor",
+        "token": 100663476,
+        "attributes": 6278,
+        "signature": "IAQBEWACAhKApA==",
+        "il": "AgMWFijTAAAGDgRy+woAcCh3AAAKDgRvIwAACiwQKDoAAAZy+woAcHN5AAAKeg4EKAEBAAYCDgQXBCjVAAAGBSwHAhco7wAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "Finalize",
+        "token": 100663477,
+        "attributes": 196,
+        "signature": "IAAB",
+        "il": "AhZvegAACt4HAih7AAAK3Co="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "WaitForConnectionAsync",
+        "token": 100663478,
+        "attributes": 134,
+        "signature": "IAASaQ==",
+        "il": "AihFAAAKKMEAAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "BeginWaitForConnection",
+        "token": 100663479,
+        "attributes": 134,
+        "signature": "IAISgU0SgVEc",
+        "il": "Aii2AAAGAwQonAAACio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "EndWaitForConnection",
+        "token": 100663480,
+        "attributes": 134,
+        "signature": "IAEBEoFN",
+        "il": "AyidAAAKKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "CheckConnectOperationsServer",
+        "token": 100663481,
+        "attributes": 129,
+        "signature": "IAAB",
+        "il": "AijuAAAGGjMGKHIAAAZ6AijhAAAGLBMCKOEAAAZvggAACiwGKHIAAAZ6AijuAAAGGDMLKFEAAAZzbQAACnoq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "CheckDisconnectOperations",
+        "token": 100663482,
+        "attributes": 129,
+        "signature": "IAAB",
+        "il": "AijuAAAGLQsoQgAABnOPAAAKegIo7gAABhkzCyhHAAAGc48AAAp6AijhAAAGLQsoRAAABnOPAAAKegIo7gAABhouFQIo4QAABiwTAijhAAAGb4IAAAosBihyAAAGeio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": ".ctor",
+        "token": 100663483,
+        "attributes": 6275,
+        "signature": "IAoBDhFgCBGAhBFkCAgSgKARgQ0RgJA=",
+        "il": "AgQOBA4HKNMAAAYCAwQFDgQOBQ4GDgcOCSizAAAGDggsGAIo8AAABiwQKGAAAAZyrQwAcHN5AAAKegIDBAUOBA4FDgYOBw4IDgkOCii/AAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "Dispose",
+        "token": 100663484,
+        "attributes": 196,
+        "signature": "IAEBAg==",
+        "il": "AnwrAAAEFCgLAAArJS0DJt4PKBQBAAbeCAIDKNoAAAbcKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "TryToReuse",
+        "token": 100663485,
+        "attributes": 707,
+        "signature": "IAEBEnA=",
+        "il": "AgMoAwEABgN1HwAAAgoGLBoCfCsAAAQGFCgMAAArLAsDe1QAAARvoAAACio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "Create",
+        "token": 100663486,
+        "attributes": 129,
+        "signature": "IAgBDhFgCBGAhBFkCAgRgQ0=",
+        "il": "AgMEBQ4EDgUOBg4HFA4IFii/AAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "Create",
+        "token": 100663487,
+        "attributes": 129,
+        "signature": "IAoBDhFgCBGAhBFkCAgSgKARgQ0RgJA=",
+        "il": "cscMAHADKKEAAAooogAACgoGctsMAHAbKKMAAAosEHKdCwBwKDsAAAZzfAAACnoCKPAAAAYsUCiRAAAKEwQRBG+SAAAKEwURBSCfAR8AFnMwAQAGEwZzPAEABhAIDggRBm8+AQAGDggRBW+kAAAK3gwRBCwHEQRvlAAACtwOBSD////fXxAFBAUXLgMWKwUgAAAIAGAOBWAOCmALDgQYYg4EF2JgDAUVMwcg/wAAABADEgP+FUYAAAEOCQ4IEgMoEAEABhMHBgcIBQ4HDgYWEgcoEwAABhMIEQhvIwAACiwWcpcLAHAodwAABhMJEQhvJAAAChEJegIRCBYOBSAAAABAXxb+AyjVAAAG3hESAyiDAAAKLAcSAyiEAAAK3Co="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "WaitForConnection",
+        "token": 100663488,
+        "attributes": 134,
+        "signature": "IAAB",
+        "il": "AijIAAAGAijdAAAGLCECKEUAAAooxwAABgoSACilAAAKb0EAAAoLEgEoQgAACioCKOEAAAZ+lQAACigHAAAGLS4oSAAACgwIIBcCAAAuDAhylwsAcCh4AAAGegIo7gAABhczCyhGAAAGc48AAAp6Ahco7wAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "WaitForConnectionAsync",
+        "token": 100663489,
+        "attributes": 134,
+        "signature": "IAESaRF1",
+        "il": "DwEoPwAACi1HAijdAAAGLS9+MgAABCUtFyZ+MQAABP4GzQAABnOmAAAKJYAyAAAEAgMoDQAAKwoSACilAAAKKgIDKMcAAAYKEgAopQAACioDKIsAAAoq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "Disconnect",
+        "token": 100663490,
+        "attributes": 134,
+        "signature": "IAAB",
+        "il": "Aii6AAAGAijhAAAGKBIAAAYtC3KXCwBwKHcAAAZ6Ahko7wAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "GetImpersonationUserName",
+        "token": 100663491,
+        "attributes": 134,
+        "signature": "IAAO",
+        "il": "AijtAAAGIAQEAADg/g8KAijhAAAGFuAW4BbgFuAGIAICAAAoCQAABiwHBnOnAAAKKgIoSAAACiACAgAABijJAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "RunAsClient",
+        "token": 100663492,
+        "attributes": 134,
+        "signature": "IAEBElw=",
+        "il": "AijtAAAGAwIo4QAABnPKAAAGCgYoxQAABt4HBijGAAAG3AZ7LwAABCwNAgZ7LwAABCgSAQAGegZ7MAAABCwNAgZ7MAAABCgSAQAGeio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "ImpersonateAndTryCode",
+        "token": 100663493,
+        "attributes": 145,
+        "signature": "AAEBHA==",
+        "il": "AnQVAAACCgZ7LQAABCgwAAAGLAkGF30uAAAEKwsGKEgAAAp9LwAABAZ7LgAABCwLBnssAAAEb88AAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "RevertImpersonationOnBackout",
+        "token": 100663494,
+        "attributes": 145,
+        "signature": "AAEBHA==",
+        "il": "AnQVAAACCgZ7LgAABCwSKC8AAAYtCwYoSAAACn0wAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "WaitForConnectionCoreAsync",
+        "token": 100663495,
+        "attributes": 129,
+        "signature": "IAEReRF1",
+        "il": "AijIAAAGAnwrAAAEFCgLAAArJS0HJgJzJwEABgoGEgH+FREAABsHbxUBAAYCKOEAAAYGe1gAAAQoBgAABi1yKEgAAAoMCCAXAgAALhEIIOUDAAAzPgYDbxsBAAYrUwZvFAEABgIo7gAABhczFyhGAAAGc48AAAooqAAACiipAAAKDd5LAhco7wAABiiqAAAKDd48Bm8UAQAGCHKXCwBwKHgAAAYoqAAACiipAAAKDd4e3gkmBm8UAQAG/hoGbx0BAAYGBm8aAQAGc6sAAAoqCSo="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "CheckConnectOperationsServerWithHandle",
+        "token": 100663496,
+        "attributes": 129,
+        "signature": "IAAB",
+        "il": "AijhAAAGLQsoRAAABnOPAAAKegIouQAABio="
+      },
+      {
+        "type": "System.IO.Pipes.NamedPipeServerStream",
+        "name": "HandleGetImpersonationUserNameError",
+        "token": 100663497,
+        "attributes": 129,
+        "signature": "IAMOCAkPAw==",
+        "il": "AywIAyBYBQAAM0EorAAACiw6cgENAHB+lQAACiAACAAAKBUAAAYmAijhAAAGFuAW4BbgFuAFBCgJAAAGLAcFc6cAAAoqKEgAAAoQAQIDKBIBAAZ6"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": ".ctor",
+        "token": 100663506,
+        "attributes": 6276,
+        "signature": "IAIBEWAI",
+        "il": "AiiuAAAKAxcyBAMZMRByCwwAcCg9AAAGc3wAAAp6BHIZDQBwKAoAACsCAxYEKNQAAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": ".ctor",
+        "token": 100663507,
+        "attributes": 6276,
+        "signature": "IAMBEWARgIQI",
+        "il": "AiiuAAAKAxcyBAMZMRByCwwAcCg9AAAGc3wAAAp6BBYyBAQXMRByHwwAcCg8AAAGc3wAAAp6BXJbDABwKAoAACsCAwQFKNQAAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "Init",
+        "token": 100663508,
+        "attributes": 129,
+        "signature": "IAMBEWARgIQJ",
+        "il": "AgR9SwAABAIEfUwAAAQCA31NAAAEAntNAAAEF18sBwIXfUQAAAQCe00AAAQYXywHAhd9RQAABAIFfU4AAAQCF31IAAAEAhZ9TwAABCo="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "InitializeHandle",
+        "token": 100663509,
+        "attributes": 132,
+        "signature": "IAMBEoCkAgI=",
+        "il": "BSwKAywHAgMoAgEABgIDfUMAAAQCBX1GAAAEAgR9SgAABAIEfUkAAAQq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "ReadByte",
+        "token": 100663510,
+        "attributes": 198,
+        "signature": "IAAI",
+        "il": "AhIA4BdzrwAACm+wAAAKFjACFSoGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "WriteByte",
+        "token": 100663511,
+        "attributes": 198,
+        "signature": "IAEBBQ==",
+        "il": "Ag8B4BdzsQAACm+yAAAKKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "Flush",
+        "token": 100663512,
+        "attributes": 198,
+        "signature": "IAAB",
+        "il": "AijtAAAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "FlushAsync",
+        "token": 100663513,
+        "attributes": 198,
+        "signature": "IAESaRF1",
+        "il": "Am+zAAAKKEsAAAoK3goLByi0AAAKCt4ABio="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "Dispose",
+        "token": 100663514,
+        "attributes": 196,
+        "signature": "IAEBAg==",
+        "il": "AntDAAAELBgCe0MAAARvggAACi0LAntDAAAEbyQAAAoCAygEAQAG3ggCAyh6AAAK3AIafU8AAAQq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_IsConnected",
+        "token": 100663515,
+        "attributes": 2182,
+        "signature": "IAAC",
+        "il": "AijuAAAGF/4BKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "set_IsConnected",
+        "token": 100663516,
+        "attributes": 2180,
+        "signature": "IAEBAg==",
+        "il": "AgMtAxkrARd9TwAABCo="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_IsAsync",
+        "token": 100663517,
+        "attributes": 2182,
+        "signature": "IAAC",
+        "il": "AntGAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_IsMessageComplete",
+        "token": 100663518,
+        "attributes": 2182,
+        "signature": "IAAC",
+        "il": "AntPAAAELQsoQgAABnOPAAAKegJ7TwAABBkzCyhDAAAGc48AAAp6AntDAAAELQsoRAAABnOPAAAKegJ7TwAABBouFQJ7QwAABCwTAntDAAAEb4IAAAosBihyAAAGegJ7SwAABBcuCyhFAAAGc48AAAp6AntIAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "UpdateMessageCompletion",
+        "token": 100663519,
+        "attributes": 131,
+        "signature": "IAEBAg==",
+        "il": "AgMtCwJ7TwAABBj+ASsBF31IAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_SafePipeHandle",
+        "token": 100663520,
+        "attributes": 2182,
+        "signature": "IAASgKQ=",
+        "il": "AntDAAAELQsoRAAABnOPAAAKegJ7QwAABG+CAAAKLAYocgAABnoCF31KAAAEAntDAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_InternalHandle",
+        "token": 100663521,
+        "attributes": 2179,
+        "signature": "IAASgKQ=",
+        "il": "AntDAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_IsHandleExposed",
+        "token": 100663522,
+        "attributes": 2180,
+        "signature": "IAAC",
+        "il": "AntKAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_CanRead",
+        "token": 100663523,
+        "attributes": 2246,
+        "signature": "IAAC",
+        "il": "AntEAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_CanWrite",
+        "token": 100663524,
+        "attributes": 2246,
+        "signature": "IAAC",
+        "il": "AntFAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_CanSeek",
+        "token": 100663525,
+        "attributes": 2246,
+        "signature": "IAAC",
+        "il": "Fio="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_Length",
+        "token": 100663526,
+        "attributes": 2246,
+        "signature": "IAAK",
+        "il": "KHQAAAZ6"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_Position",
+        "token": 100663527,
+        "attributes": 2246,
+        "signature": "IAAK",
+        "il": "KHQAAAZ6"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "set_Position",
+        "token": 100663528,
+        "attributes": 2246,
+        "signature": "IAEBCg==",
+        "il": "KHQAAAZ6"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "SetLength",
+        "token": 100663529,
+        "attributes": 198,
+        "signature": "IAEBCg==",
+        "il": "KHQAAAZ6"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "Seek",
+        "token": 100663530,
+        "attributes": 198,
+        "signature": "IAIKChGBgQ==",
+        "il": "KHQAAAZ6"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "CheckPipePropertyOperations",
+        "token": 100663531,
+        "attributes": 453,
+        "signature": "IAAB",
+        "il": "AntDAAAELQsoRAAABnOPAAAKegJ7TwAABBouFQJ7QwAABCwTAntDAAAEb4IAAAosBihyAAAGeio="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "CheckReadOperations",
+        "token": 100663532,
+        "attributes": 133,
+        "signature": "IAAB",
+        "il": "AntPAAAELQsoQgAABnOPAAAKegJ7TwAABBkzCyhDAAAGc48AAAp6AntDAAAELQsoRAAABnOPAAAKegJ7TwAABBouFQJ7QwAABCwTAntDAAAEb4IAAAosBihyAAAGeio="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "CheckWriteOperations",
+        "token": 100663533,
+        "attributes": 133,
+        "signature": "IAAB",
+        "il": "AntPAAAELQsoQgAABnOPAAAKegJ7TwAABBkzCyhDAAAGc48AAAp6AntDAAAELQsoRAAABnOPAAAKegJ7TwAABBgzCyhRAAAGc20AAAp6AntPAAAEGi4VAntDAAAELBMCe0MAAARvggAACiwGKHIAAAZ6Kg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_State",
+        "token": 100663534,
+        "attributes": 2179,
+        "signature": "IAARaA==",
+        "il": "AntPAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "set_State",
+        "token": 100663535,
+        "attributes": 2179,
+        "signature": "IAEBEWg=",
+        "il": "AgN9TwAABCo="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_IsCurrentUserOnly",
+        "token": 100663536,
+        "attributes": 2179,
+        "signature": "IAAC",
+        "il": "AntHAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "set_IsCurrentUserOnly",
+        "token": 100663537,
+        "attributes": 2179,
+        "signature": "IAEBAg==",
+        "il": "AgN9RwAABCo="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "Read",
+        "token": 100663538,
+        "attributes": 198,
+        "signature": "IAMIHQUICA==",
+        "il": "AntGAAAELBwCAwQFKEUAAApvtQAACm+2AAAKChIAKLcAAAoqAwQFKLgAAAoCb7kAAAotBihzAAAGegIo7AAABgIDBAVzugAACigFAQAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "Read",
+        "token": 100663539,
+        "attributes": 198,
+        "signature": "IAEIFRGBeQEF",
+        "il": "AntGAAAELAgCAyiwAAAKKgJvuQAACi0GKHMAAAZ6AijsAAAGAgMoBQEABio="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "ReadAsync",
+        "token": 100663540,
+        "attributes": 198,
+        "signature": "IAQVEoGJAQgdBQgIEXU=",
+        "il": "AwQFKLgAAAoCb7kAAAotBihzAAAGeg8EKD8AAAosCA4EKA4AACsqAijsAAAGBS0OAhYo3wAABhYoDwAAKyoCe0YAAAQtGQIDBAVzvQAACg4EKPYAAAYKEgAovgAACioCAwQFc70AAAoOBCgGAQAGChIAKL4AAAoq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "ReadAsync",
+        "token": 100663541,
+        "attributes": 198,
+        "signature": "IAIVEYCNAQgVEYGNAQURdQ==",
+        "il": "Am+5AAAKLQYocwAABnoPAig/AAAKLAcEKBAAACsqAijsAAAGDwEowAAACi0OAhYo3wAABhZzwQAACioCe0YAAAQtCQIDBCj2AAAGKgIDBCgGAQAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "AsyncOverSyncRead",
+        "token": 100663542,
+        "attributes": 129,
+        "signature": "IAIVEYCNAQgVEYGNAQURdQ==",
+        "il": "fl8AAAQlLRcmfl4AAAT+BisBAAZzwgAACiWAXwAABAIDc8MAAAoEKBEAACsq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "BeginRead",
+        "token": 100663543,
+        "attributes": 198,
+        "signature": "IAUSgU0dBQgIEoFRHA==",
+        "il": "AntGAAAELBgCAwQFKEUAAApvtQAACg4EDgUonAAACioCAwQFDgQOBSjEAAAKKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "EndRead",
+        "token": 100663544,
+        "attributes": 198,
+        "signature": "IAEIEoFN",
+        "il": "AntGAAAELAcDKBIAACsqAgMoxgAACio="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "Write",
+        "token": 100663545,
+        "attributes": 198,
+        "signature": "IAMBHQUICA==",
+        "il": "AntGAAAELBwCAwQFKEUAAApvxwAACm9BAAAKChIAKEIAAAoqAwQFKLgAAAoCb8gAAAotBih1AAAGegIo7QAABgIDBAVzyQAACigHAQAGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "Write",
+        "token": 100663546,
+        "attributes": 198,
+        "signature": "IAEBFRGBfQEF",
+        "il": "AntGAAAELAgCAyiyAAAKKgJvyAAACi0GKHUAAAZ6AijtAAAGAgMoBwEABio="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "WriteAsync",
+        "token": 100663547,
+        "attributes": 198,
+        "signature": "IAQSaR0FCAgRdQ==",
+        "il": "AwQFKLgAAAoCb8gAAAotBih1AAAGeg8EKD8AAAosCA4EKA4AACsqAijtAAAGBSw6AntGAAAELRkCAwQFc8oAAAoOBCj9AAAGChIAKKUAAAoqAgMEBXPKAAAKDgQoCAEABgoSACilAAAKKihLAAAKKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "WriteAsync",
+        "token": 100663548,
+        "attributes": 198,
+        "signature": "IAIReRURgWUBBRF1",
+        "il": "Am/IAAAKLQYodQAABnoPAig/AAAKLAcEKMsAAAoqAijtAAAGDwEozAAACiwaAntGAAAELQkCAwQo/QAABioCAwQoCAEABioSAP4VHgAAAQYq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "AsyncOverSyncWrite",
+        "token": 100663549,
+        "attributes": 129,
+        "signature": "IAIReRURgWUBBRF1",
+        "il": "fmAAAAQlLRcmfl4AAAT+BiwBAAZzzQAACiWAYAAABAIDc84AAAoEKBMAACsq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "BeginWrite",
+        "token": 100663550,
+        "attributes": 198,
+        "signature": "IAUSgU0dBQgIEoFRHA==",
+        "il": "AntGAAAELBgCAwQFKEUAAApvxwAACg4EDgUonAAACioCAwQFDgQOBSjPAAAKKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "EndWrite",
+        "token": 100663551,
+        "attributes": 198,
+        "signature": "IAEBEoFN",
+        "il": "AntGAAAELAcDKJ0AAAoqAgMo0AAACio="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "GetPipePath",
+        "token": 100663552,
+        "attributes": 147,
+        "signature": "AAIODg4=",
+        "il": "ci8NAHACcjUNAHADKHUAAAooogAACgoGctsMAHAbKKMAAAosEHKdCwBwKDsAAAZzfAAACnoGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "ValidateHandleIsPipe",
+        "token": 100663553,
+        "attributes": 146,
+        "signature": "AAEBEoCk",
+        "il": "AigEAAAGGS4LKFIAAAZzbQAACnoq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "InitializeAsyncHandle",
+        "token": 100663554,
+        "attributes": 129,
+        "signature": "IAEBEoCk",
+        "il": "AgMo0QAACn1QAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "TryToReuse",
+        "token": 100663555,
+        "attributes": 963,
+        "signature": "IAEBEnA=",
+        "il": "A3xXAAAEKNIAAAoDdR4AAAIKBiwsBntdAAAELQgCfFEAAAQrBgJ8UgAABAsHBhQoFAAAKywLA3tUAAAEb6AAAAoq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "DisposeCore",
+        "token": 100663556,
+        "attributes": 129,
+        "signature": "IAEBAg==",
+        "il": "Ayw+AntQAAAEJS0DJisFKNMAAAoCfFEAAAQUKBUAACslLQMmKwUoFAEABgJ8UgAABBQoFQAAKyUtAiYqKBQBAAYq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "ReadCore",
+        "token": 100663557,
+        "attributes": 129,
+        "signature": "IAEIFRGBeQEF",
+        "il": "DwEo1AAACi0CFioDKBYAACsLB+AKFgwCe0MAAAQGDwEo1AAAChICfpUAAAooDgAABiwJAhd9SAAABAgqKEgAAAoNAgkg6gAAAP4BFv4BfUgAAAQJH20uEgkg6QAAAC4KCSDqAAAAMwsIKgIYKO8AAAYWKgl+1gAACih4AAAGeg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "ReadAsyncCore",
+        "token": 100663558,
+        "attributes": 129,
+        "signature": "IAIVEYCNAQgVEYGNAQURdQ==",
+        "il": "AnxRAAAEFCgVAAArJS0IJgIWcyUBAAYKBgMo1wAACm8VAQAGAntDAAAEBnxWAAAEKNgAAAoPASjAAAAKfpUAAAoGe1gAAAQoDwAABi18KEgAAAoLByDpAAAAMA8HH20uIwcg6QAAAC4bK0YHIOoAAAAuVwcg5QMAADM2BgRvGwEABitGAhgo7wAABgZ7WAAABH6VAAAKfdkAAAoGbxQBAAYCFyjfAAAGFnPBAAAKDN43Bm8UAQAGB3KXCwBwKHgAAAYoFwAAKwzeHt4JJgZvFAEABv4aBm8dAQAGBgZvGgEABnPbAAAKKggq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "WriteCore",
+        "token": 100663559,
+        "attributes": 129,
+        "signature": "IAEBFRGBfQEF",
+        "il": "DwEo3AAACi0BKgMoGAAAKwsH4AoWDAJ7QwAABAYPASjcAAAKEgJ+lQAACigQAAAGLQwCKEgAAAooEgEABnoW4Asq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "WriteAsyncCore",
+        "token": 100663560,
+        "attributes": 129,
+        "signature": "IAIReRURgWUBBRF1",
+        "il": "AnxSAAAEFCgVAAArJS0IJgIXcyUBAAYKBgNvFQEABgJ7QwAABAZ8VgAABCjYAAAKDwEozAAACn6VAAAKBntYAAAEKBEAAAYtMShIAAAKCwcg5QMAADMJBgRvGwEABisaBm8UAQAGAgcoEgEABiioAAAKKKkAAAoM3h7eCSYGbxQBAAb+GgZvHQEABgYGbxoBAAZzqwAACioIKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "WaitForPipeDrain",
+        "token": 100663561,
+        "attributes": 134,
+        "signature": "IAAB",
+        "il": "AijtAAAGAm/IAAAKLQYodQAABnoCe0MAAAQoDQAABi0MAihIAAAKKBIBAAZ6Kg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_TransmissionMode",
+        "token": 100663562,
+        "attributes": 2502,
+        "signature": "IAARgIQ=",
+        "il": "Am/rAAAGAntJAAAELCsCe0MAAAQSAOAW4BbgFuAoCgAABi0MAihIAAAKKBIBAAZ6BhpfLAIXKhYqAntMAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_InBufferSize",
+        "token": 100663563,
+        "attributes": 2502,
+        "signature": "IAAI",
+        "il": "Am/rAAAGAm+5AAAKLQsoVgAABnNsAAAKegJ7QwAABBbgFuASAOAW4CgKAAAGLQwCKEgAAAooEgEABnoGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_OutBufferSize",
+        "token": 100663564,
+        "attributes": 2502,
+        "signature": "IAAI",
+        "il": "Am/rAAAGAm/IAAAKLQsoWAAABnNsAAAKegJ7TQAABBgzCQJ7TgAABAorIgJ7QwAABBbgEgDgFuAW4CgKAAAGLQwCKEgAAAooEgEABnoGKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "get_ReadMode",
+        "token": 100663565,
+        "attributes": 2502,
+        "signature": "IAARgIQ=",
+        "il": "Am/rAAAGAntJAAAELQgCKOIAAAYsBgIoEQEABgJ7SwAABCo="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "set_ReadMode",
+        "token": 100663566,
+        "attributes": 2502,
+        "signature": "IAEBEYCE",
+        "il": "Am/rAAAGAxYyBAMXMRByGQsAcCg8AAAGc3wAAAp6AxdiCgJ7QwAABBIA4H6VAAAKfpUAAAooCwAABi0MAihIAAAKKBIBAAZ6AgN9SwAABCo="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "GetSecAttrs",
+        "token": 100663567,
+        "attributes": 147,
+        "signature": "AAEREBGBDQ==",
+        "il": "EgH+FQQAAAISAf4cBAAAAn0BAAAEEgECF18tAxYrARd9AwAABAcKBio="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "GetSecAttrs",
+        "token": 100663568,
+        "attributes": 147,
+        "signature": "AAMREBGBDRKAoBARgRk=",
+        "il": "AigPAQAGCgMsNgNv3gAACgsEBxko3wAACoFGAAABByUNLAUJjmktBRbgDCsJCRaPagAAAeAMEgAIfQIAAAQUDQYq"
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "UpdateReadMode",
+        "token": 100663569,
+        "attributes": 129,
+        "signature": "IAAB",
+        "il": "AijgAAAGEgDgFuAW4BbgFuAWKAkAAAYtDAIoSAAACigSAQAGegYYXywIAhd9SwAABCoCFn1LAAAEKg=="
+      },
+      {
+        "type": "System.IO.Pipes.PipeStream",
+        "name": "WinIOError",
+        "token": 100663570,
+        "attributes": 131,
+        "signature": "IAESgJUI",
+        "il": "Ax8mMAsDHC40Ax8mLikrPwMfbS4KAyDoAAAAWRc1MAIYfU8AAAQoUQAABgMoeQAABnNyAAAKKihxAAAGKgJ7QwAABG/gAAAKAhh9TwAABANylwsAcCh4AAAGKg=="
+      }
+    ],
+    "symbols": {
+      "16777246": "System.Threading.Tasks.ValueTask",
+      "16777262": "System.Threading.SpinWait",
+      "16777286": "System.Runtime.InteropServices.GCHandle",
+      "16777295": "System.Security.Principal.SecurityIdentifier",
+      "16777322": "System.Byte",
+      "33554436": "SECURITY_ATTRIBUTES",
+      "33554453": "ExecuteHelper",
+      "33554462": "ReadWriteValueTaskSource",
+      "33554463": "ConnectionValueTaskSource",
+      "67108865": "SECURITY_ATTRIBUTES::nLength",
+      "67108866": "SECURITY_ATTRIBUTES::lpSecurityDescriptor",
+      "67108867": "SECURITY_ATTRIBUTES::bInheritHandle",
+      "67108899": "System.IO.Pipes.NamedPipeClientStream::_normalizedPipePath",
+      "67108900": "System.IO.Pipes.NamedPipeClientStream::_impersonationLevel",
+      "67108901": "System.IO.Pipes.NamedPipeClientStream::_pipeOptions",
+      "67108902": "System.IO.Pipes.NamedPipeClientStream::_inheritability",
+      "67108903": "System.IO.Pipes.NamedPipeClientStream::_direction",
+      "67108904": "<>c::<>9",
+      "67108905": "<>c::<>9__21_0",
+      "67108907": "System.IO.Pipes.NamedPipeServerStream::_reusableConnectionValueTaskSource",
+      "67108908": "ExecuteHelper::_userCode",
+      "67108909": "ExecuteHelper::_handle",
+      "67108910": "ExecuteHelper::_mustRevert",
+      "67108911": "ExecuteHelper::_impersonateErrorCode",
+      "67108912": "ExecuteHelper::_revertImpersonateErrorCode",
+      "67108913": "<>c::<>9",
+      "67108914": "<>c::<>9__23_0",
+      "67108931": "System.IO.Pipes.PipeStream::_handle",
+      "67108932": "System.IO.Pipes.PipeStream::_canRead",
+      "67108933": "System.IO.Pipes.PipeStream::_canWrite",
+      "67108934": "System.IO.Pipes.PipeStream::_isAsync",
+      "67108935": "System.IO.Pipes.PipeStream::_isCurrentUserOnly",
+      "67108936": "System.IO.Pipes.PipeStream::_isMessageComplete",
+      "67108937": "System.IO.Pipes.PipeStream::_isFromExistingHandle",
+      "67108938": "System.IO.Pipes.PipeStream::_isHandleExposed",
+      "67108939": "System.IO.Pipes.PipeStream::_readMode",
+      "67108940": "System.IO.Pipes.PipeStream::_transmissionMode",
+      "67108941": "System.IO.Pipes.PipeStream::_pipeDirection",
+      "67108942": "System.IO.Pipes.PipeStream::_outBufferSize",
+      "67108943": "System.IO.Pipes.PipeStream::_state",
+      "67108944": "System.IO.Pipes.PipeStream::_threadPoolBinding",
+      "67108945": "System.IO.Pipes.PipeStream::_reusableReadValueTaskSource",
+      "67108946": "System.IO.Pipes.PipeStream::_reusableWriteValueTaskSource",
+      "67108948": "PipeValueTaskSource::_preallocatedOverlapped",
+      "67108950": "PipeValueTaskSource::_memoryHandle",
+      "67108951": "PipeValueTaskSource::_source",
+      "67108952": "PipeValueTaskSource::_overlapped",
+      "67108957": "ReadWriteValueTaskSource::_isWrite",
+      "67108958": "<>c::<>9",
+      "67108959": "<>c::<>9__71_0",
+      "67108960": "<>c::<>9__78_0",
+      "100663298": "Kernel32::GetCurrentProcess",
+      "100663300": "Kernel32::GetFileType",
+      "100663302": "Kernel32::ConnectNamedPipe",
+      "100663303": "Kernel32::ConnectNamedPipe",
+      "100663304": "Kernel32::WaitNamedPipe",
+      "100663305": "Kernel32::GetNamedPipeHandleStateW",
+      "100663306": "Kernel32::GetNamedPipeInfo",
+      "100663307": "Kernel32::SetNamedPipeHandleState",
+      "100663309": "Kernel32::FlushFileBuffers",
+      "100663310": "Kernel32::ReadFile",
+      "100663311": "Kernel32::ReadFile",
+      "100663312": "Kernel32::WriteFile",
+      "100663313": "Kernel32::WriteFile",
+      "100663314": "Kernel32::DisconnectNamedPipe",
+      "100663315": "Kernel32::CreateNamedPipe",
+      "100663316": "Kernel32::CreateNamedPipeClient",
+      "100663317": "Kernel32::LoadLibraryEx",
+      "100663343": "Advapi32::RevertToSelf",
+      "100663344": "Advapi32::ImpersonateNamedPipeClient",
+      "100663353": "System.SR::get_Argument_EmptyServerName",
+      "100663354": "System.SR::get_Argument_InvalidHandle",
+      "100663355": "System.SR::get_ArgumentOutOfRange_AnonymousReserved",
+      "100663356": "System.SR::get_ArgumentOutOfRange_TransmissionModeByteOrMsg",
+      "100663357": "System.SR::get_ArgumentOutOfRange_DirectionModeInOutOrInOut",
+      "100663358": "System.SR::get_ArgumentOutOfRange_ImpersonationInvalid",
+      "100663359": "System.SR::get_ArgumentOutOfRange_OptionsInvalid",
+      "100663360": "System.SR::get_ArgumentOutOfRange_HandleInheritabilityNoneOrInheritable",
+      "100663361": "System.SR::get_ArgumentOutOfRange_MaxNumServerInstances",
+      "100663362": "System.SR::get_InvalidOperation_PipeNotYetConnected",
+      "100663363": "System.SR::get_InvalidOperation_PipeDisconnected",
+      "100663364": "System.SR::get_InvalidOperation_PipeHandleNotSet",
+      "100663365": "System.SR::get_InvalidOperation_PipeReadModeNotMessage",
+      "100663366": "System.SR::get_InvalidOperation_PipeAlreadyConnected",
+      "100663367": "System.SR::get_InvalidOperation_PipeAlreadyDisconnected",
+      "100663377": "System.SR::get_IO_PipeBroken",
+      "100663378": "System.SR::get_IO_InvalidPipeHandle",
+      "100663382": "System.SR::get_NotSupported_UnreadableStream",
+      "100663384": "System.SR::get_NotSupported_UnwritableStream",
+      "100663391": "System.SR::get_UnauthorizedAccess_NotOwnedByCurrentUser",
+      "100663392": "System.SR::get_NotSupported_PipeSecurityIsCurrentUserOnly",
+      "100663409": "System.IO.Error::GetEndOfFile",
+      "100663410": "System.IO.Error::GetPipeNotOpen",
+      "100663411": "System.IO.Error::GetReadNotSupported",
+      "100663412": "System.IO.Error::GetSeekNotSupported",
+      "100663413": "System.IO.Error::GetWriteNotSupported",
+      "100663415": "System.IO.Win32Marshal::GetExceptionForLastWin32Error",
+      "100663416": "System.IO.Win32Marshal::GetExceptionForWin32Error",
+      "100663417": "System.IO.Win32Marshal::MakeHRFromErrorCode",
+      "100663446": "System.IO.Pipes.NamedPipeClientStream::.ctor",
+      "100663450": "System.IO.Pipes.NamedPipeClientStream::Connect",
+      "100663452": "System.IO.Pipes.NamedPipeClientStream::ConnectInternal",
+      "100663456": "System.IO.Pipes.NamedPipeClientStream::ConnectAsync",
+      "100663458": "System.IO.Pipes.NamedPipeClientStream::ToTimeoutMilliseconds",
+      "100663460": "System.IO.Pipes.NamedPipeClientStream::CheckConnectOperationsClient",
+      "100663461": "System.IO.Pipes.NamedPipeClientStream::TryConnect",
+      "100663463": "System.IO.Pipes.NamedPipeClientStream::ValidateRemotePipeUser",
+      "100663464": "System.IO.Pipes.NamedPipeClientStream::<TryConnect>g__CreateNamedPipeClient|26_0",
+      "100663467": "<>c::<ConnectAsync>b__21_0",
+      "100663474": "System.IO.Pipes.NamedPipeServerStream::.ctor",
+      "100663475": "System.IO.Pipes.NamedPipeServerStream::ValidateParameters",
+      "100663478": "System.IO.Pipes.NamedPipeServerStream::WaitForConnectionAsync",
+      "100663481": "System.IO.Pipes.NamedPipeServerStream::CheckConnectOperationsServer",
+      "100663482": "System.IO.Pipes.NamedPipeServerStream::CheckDisconnectOperations",
+      "100663486": "System.IO.Pipes.NamedPipeServerStream::Create",
+      "100663487": "System.IO.Pipes.NamedPipeServerStream::Create",
+      "100663489": "System.IO.Pipes.NamedPipeServerStream::WaitForConnectionAsync",
+      "100663493": "System.IO.Pipes.NamedPipeServerStream::ImpersonateAndTryCode",
+      "100663494": "System.IO.Pipes.NamedPipeServerStream::RevertImpersonationOnBackout",
+      "100663495": "System.IO.Pipes.NamedPipeServerStream::WaitForConnectionCoreAsync",
+      "100663496": "System.IO.Pipes.NamedPipeServerStream::CheckConnectOperationsServerWithHandle",
+      "100663497": "System.IO.Pipes.NamedPipeServerStream::HandleGetImpersonationUserNameError",
+      "100663498": "ExecuteHelper::.ctor",
+      "100663501": "<>c::<WaitForConnectionAsync>b__23_0",
+      "100663503": "System.IO.Pipes.PipeStreamImpersonationWorker::Invoke",
+      "100663506": "System.IO.Pipes.PipeStream::.ctor",
+      "100663507": "System.IO.Pipes.PipeStream::.ctor",
+      "100663508": "System.IO.Pipes.PipeStream::Init",
+      "100663509": "System.IO.Pipes.PipeStream::InitializeHandle",
+      "100663514": "System.IO.Pipes.PipeStream::Dispose",
+      "100663517": "System.IO.Pipes.PipeStream::get_IsAsync",
+      "100663519": "System.IO.Pipes.PipeStream::UpdateMessageCompletion",
+      "100663520": "System.IO.Pipes.PipeStream::get_SafePipeHandle",
+      "100663521": "System.IO.Pipes.PipeStream::get_InternalHandle",
+      "100663522": "System.IO.Pipes.PipeStream::get_IsHandleExposed",
+      "100663531": "System.IO.Pipes.PipeStream::CheckPipePropertyOperations",
+      "100663532": "System.IO.Pipes.PipeStream::CheckReadOperations",
+      "100663533": "System.IO.Pipes.PipeStream::CheckWriteOperations",
+      "100663534": "System.IO.Pipes.PipeStream::get_State",
+      "100663535": "System.IO.Pipes.PipeStream::set_State",
+      "100663536": "System.IO.Pipes.PipeStream::get_IsCurrentUserOnly",
+      "100663537": "System.IO.Pipes.PipeStream::set_IsCurrentUserOnly",
+      "100663542": "System.IO.Pipes.PipeStream::AsyncOverSyncRead",
+      "100663549": "System.IO.Pipes.PipeStream::AsyncOverSyncWrite",
+      "100663552": "System.IO.Pipes.PipeStream::GetPipePath",
+      "100663553": "System.IO.Pipes.PipeStream::ValidateHandleIsPipe",
+      "100663554": "System.IO.Pipes.PipeStream::InitializeAsyncHandle",
+      "100663555": "System.IO.Pipes.PipeStream::TryToReuse",
+      "100663556": "System.IO.Pipes.PipeStream::DisposeCore",
+      "100663557": "System.IO.Pipes.PipeStream::ReadCore",
+      "100663558": "System.IO.Pipes.PipeStream::ReadAsyncCore",
+      "100663559": "System.IO.Pipes.PipeStream::WriteCore",
+      "100663560": "System.IO.Pipes.PipeStream::WriteAsyncCore",
+      "100663567": "System.IO.Pipes.PipeStream::GetSecAttrs",
+      "100663568": "System.IO.Pipes.PipeStream::GetSecAttrs",
+      "100663569": "System.IO.Pipes.PipeStream::UpdateReadMode",
+      "100663570": "System.IO.Pipes.PipeStream::WinIOError",
+      "100663572": "PipeValueTaskSource::Dispose",
+      "100663573": "PipeValueTaskSource::PrepareForOperation",
+      "100663578": "PipeValueTaskSource::get_Version",
+      "100663579": "PipeValueTaskSource::RegisterForCancellation",
+      "100663581": "PipeValueTaskSource::FinishedScheduling",
+      "100663589": "ReadWriteValueTaskSource::.ctor",
+      "100663591": "ConnectionValueTaskSource::.ctor",
+      "100663595": "<>c::<AsyncOverSyncRead>b__71_0",
+      "100663596": "<>c::<AsyncOverSyncWrite>b__78_0",
+      "100663600": "System.IO.Pipes.PipeAccessRule::.ctor",
+      "100663610": "System.IO.Pipes.PipesAclExtensions::GetAccessControl",
+      "100663612": "System.IO.Pipes.PipeSecurity::.ctor",
+      "100663614": "System.IO.Pipes.PipeSecurity::AddAccessRule",
+      "167772190": "System.Type::GetTypeFromHandle",
+      "167772195": "System.Runtime.InteropServices.SafeHandle::get_IsInvalid",
+      "167772196": "System.Runtime.InteropServices.SafeHandle::Dispose",
+      "167772218": "System.Threading.CancellationToken::get_CanBeCanceled",
+      "167772219": "System.Threading.CancellationToken::ThrowIfCancellationRequested",
+      "167772220": "TypeSpecification::.ctor",
+      "167772223": "System.Threading.CancellationToken::get_IsCancellationRequested",
+      "167772225": "System.Threading.Tasks.Task::GetAwaiter",
+      "167772226": "System.Runtime.CompilerServices.TaskAwaiter::GetResult",
+      "167772228": "System.Threading.Tasks.Task::get_Factory",
+      "167772229": "System.Threading.CancellationToken::get_None",
+      "167772230": "System.Threading.Tasks.TaskScheduler::get_Default",
+      "167772231": "System.Threading.Tasks.TaskFactory::StartNew",
+      "167772232": "System.Runtime.InteropServices.Marshal::GetLastPInvokeError",
+      "167772233": "System.Threading.SpinWait::SpinOnce",
+      "167772235": "System.Threading.Tasks.Task::get_CompletedTask",
+      "167772268": "System.NotSupportedException::.ctor",
+      "167772269": "System.IO.IOException::.ctor",
+      "167772273": "System.UnauthorizedAccessException::.ctor",
+      "167772274": "System.IO.IOException::.ctor",
+      "167772277": "System.String::Concat",
+      "167772279": "System.ArgumentNullException::ThrowIfNull",
+      "167772281": "System.ArgumentException::.ctor",
+      "167772282": "System.IO.Stream::Dispose",
+      "167772283": "System.Object::Finalize",
+      "167772284": "System.ArgumentOutOfRangeException::.ctor",
+      "167772290": "System.Runtime.InteropServices.SafeHandle::get_IsClosed",
+      "167772291": "System.Runtime.InteropServices.GCHandle::get_IsAllocated",
+      "167772292": "System.Runtime.InteropServices.GCHandle::Free",
+      "167772293": "System.ArgumentException::ThrowIfNullOrEmpty",
+      "167772294": "System.String::get_Length",
+      "167772295": "System.ArgumentException::.ctor",
+      "167772297": "System.Environment::get_TickCount",
+      "167772298": "System.TimeoutException::.ctor",
+      "167772299": "System.Threading.Tasks.Task::FromCanceled",
+      "167772300": "TypeSpecification::.ctor",
+      "167772301": "System.TimeSpan::get_TotalMilliseconds",
+      "167772303": "System.InvalidOperationException::.ctor",
+      "167772304": "System.Security.AccessControl.ObjectSecurity::GetOwner",
+      "167772305": "System.Security.Principal.WindowsIdentity::GetCurrent",
+      "167772306": "System.Security.Principal.WindowsIdentity::get_Owner",
+      "167772307": "System.Security.Principal.IdentityReference::op_Inequality",
+      "167772308": "System.IDisposable::Dispose",
+      "167772309": "System.IntPtr::Zero",
+      "167772316": "System.Threading.Tasks.TaskToAsyncResult::Begin",
+      "167772317": "System.Threading.Tasks.TaskToAsyncResult::End",
+      "167772320": "System.Threading.PreAllocatedOverlapped::Dispose",
+      "167772321": "System.String::Concat",
+      "167772322": "System.IO.Path::GetFullPath",
+      "167772323": "System.String::Equals",
+      "167772324": "System.Security.AccessControl.ObjectSecurity::SetOwner",
+      "167772325": "System.Threading.Tasks.ValueTask::AsTask",
+      "167772326": "TypeSpecification::.ctor",
+      "167772327": "System.String::.ctor",
+      "167772328": "System.Runtime.ExceptionServices.ExceptionDispatchInfo::SetCurrentStackTrace",
+      "167772329": "System.Threading.Tasks.ValueTask::FromException",
+      "167772330": "System.Threading.Tasks.ValueTask::get_CompletedTask",
+      "167772331": "System.Threading.Tasks.ValueTask::.ctor",
+      "167772332": "System.Environment::get_Is64BitProcess",
+      "167772334": "System.IO.Stream::.ctor",
+      "167772335": "TypeSpecification::.ctor",
+      "167772336": "System.IO.Stream::Read",
+      "167772337": "TypeSpecification::.ctor",
+      "167772338": "System.IO.Stream::Write",
+      "167772339": "System.IO.Stream::Flush",
+      "167772340": "System.Threading.Tasks.Task::FromException",
+      "167772341": "System.IO.Stream::ReadAsync",
+      "167772342": "TypeSpecification::GetAwaiter",
+      "167772343": "TypeSpecification::GetResult",
+      "167772344": "System.IO.Stream::ValidateBufferArguments",
+      "167772345": "System.IO.Stream::get_CanRead",
+      "167772346": "TypeSpecification::.ctor",
+      "167772349": "TypeSpecification::.ctor",
+      "167772350": "TypeSpecification::AsTask",
+      "167772352": "TypeSpecification::get_Length",
+      "167772353": "TypeSpecification::.ctor",
+      "167772354": "TypeSpecification::.ctor",
+      "167772355": "TypeSpecification::.ctor",
+      "167772356": "System.IO.Stream::BeginRead",
+      "167772358": "System.IO.Stream::EndRead",
+      "167772359": "System.IO.Stream::WriteAsync",
+      "167772360": "System.IO.Stream::get_CanWrite",
+      "167772361": "TypeSpecification::.ctor",
+      "167772362": "TypeSpecification::.ctor",
+      "167772363": "System.Threading.Tasks.ValueTask::FromCanceled",
+      "167772364": "TypeSpecification::get_Length",
+      "167772365": "TypeSpecification::.ctor",
+      "167772366": "TypeSpecification::.ctor",
+      "167772367": "System.IO.Stream::BeginWrite",
+      "167772368": "System.IO.Stream::EndWrite",
+      "167772369": "System.Threading.ThreadPoolBoundHandle::BindHandle",
+      "167772370": "TypeSpecification::Reset",
+      "167772371": "System.Threading.ThreadPoolBoundHandle::Dispose",
+      "167772372": "TypeSpecification::get_Length",
+      "167772374": "System.String::Empty",
+      "167772375": "TypeSpecification::op_Implicit",
+      "167772376": "System.Buffers.MemoryHandle::get_Pointer",
+      "167772377": "System.Threading.NativeOverlapped::InternalLow",
+      "167772379": "TypeSpecification::.ctor",
+      "167772380": "TypeSpecification::get_Length",
+      "167772382": "System.Security.AccessControl.ObjectSecurity::GetSecurityDescriptorBinaryForm",
+      "167772383": "System.Runtime.InteropServices.GCHandle::Alloc",
+      "167772384": "System.Runtime.InteropServices.SafeHandle::SetHandleAsInvalid"
+    },
+    "opcodes": [
+      {
+        "value": 0,
+        "name": "nop",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 1,
+        "name": "break",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 2,
+        "name": "ldarg.0",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 3,
+        "name": "ldarg.1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 4,
+        "name": "ldarg.2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 5,
+        "name": "ldarg.3",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 6,
+        "name": "ldloc.0",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 7,
+        "name": "ldloc.1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 8,
+        "name": "ldloc.2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 9,
+        "name": "ldloc.3",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 10,
+        "name": "stloc.0",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 11,
+        "name": "stloc.1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 12,
+        "name": "stloc.2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 13,
+        "name": "stloc.3",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 14,
+        "name": "ldarg.s",
+        "operand": "ShortInlineVar"
+      },
+      {
+        "value": 15,
+        "name": "ldarga.s",
+        "operand": "ShortInlineVar"
+      },
+      {
+        "value": 16,
+        "name": "starg.s",
+        "operand": "ShortInlineVar"
+      },
+      {
+        "value": 17,
+        "name": "ldloc.s",
+        "operand": "ShortInlineVar"
+      },
+      {
+        "value": 18,
+        "name": "ldloca.s",
+        "operand": "ShortInlineVar"
+      },
+      {
+        "value": 19,
+        "name": "stloc.s",
+        "operand": "ShortInlineVar"
+      },
+      {
+        "value": 20,
+        "name": "ldnull",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 21,
+        "name": "ldc.i4.m1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 22,
+        "name": "ldc.i4.0",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 23,
+        "name": "ldc.i4.1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 24,
+        "name": "ldc.i4.2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 25,
+        "name": "ldc.i4.3",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 26,
+        "name": "ldc.i4.4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 27,
+        "name": "ldc.i4.5",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 28,
+        "name": "ldc.i4.6",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 29,
+        "name": "ldc.i4.7",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 30,
+        "name": "ldc.i4.8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 31,
+        "name": "ldc.i4.s",
+        "operand": "ShortInlineI"
+      },
+      {
+        "value": 32,
+        "name": "ldc.i4",
+        "operand": "InlineI"
+      },
+      {
+        "value": 33,
+        "name": "ldc.i8",
+        "operand": "InlineI8"
+      },
+      {
+        "value": 34,
+        "name": "ldc.r4",
+        "operand": "ShortInlineR"
+      },
+      {
+        "value": 35,
+        "name": "ldc.r8",
+        "operand": "InlineR"
+      },
+      {
+        "value": 37,
+        "name": "dup",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 38,
+        "name": "pop",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 39,
+        "name": "jmp",
+        "operand": "InlineMethod"
+      },
+      {
+        "value": 40,
+        "name": "call",
+        "operand": "InlineMethod"
+      },
+      {
+        "value": 41,
+        "name": "calli",
+        "operand": "InlineSig"
+      },
+      {
+        "value": 42,
+        "name": "ret",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 43,
+        "name": "br.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 44,
+        "name": "brfalse.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 45,
+        "name": "brtrue.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 46,
+        "name": "beq.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 47,
+        "name": "bge.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 48,
+        "name": "bgt.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 49,
+        "name": "ble.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 50,
+        "name": "blt.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 51,
+        "name": "bne.un.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 52,
+        "name": "bge.un.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 53,
+        "name": "bgt.un.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 54,
+        "name": "ble.un.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 55,
+        "name": "blt.un.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 56,
+        "name": "br",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 57,
+        "name": "brfalse",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 58,
+        "name": "brtrue",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 59,
+        "name": "beq",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 60,
+        "name": "bge",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 61,
+        "name": "bgt",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 62,
+        "name": "ble",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 63,
+        "name": "blt",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 64,
+        "name": "bne.un",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 65,
+        "name": "bge.un",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 66,
+        "name": "bgt.un",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 67,
+        "name": "ble.un",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 68,
+        "name": "blt.un",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 69,
+        "name": "switch",
+        "operand": "InlineSwitch"
+      },
+      {
+        "value": 70,
+        "name": "ldind.i1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 71,
+        "name": "ldind.u1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 72,
+        "name": "ldind.i2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 73,
+        "name": "ldind.u2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 74,
+        "name": "ldind.i4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 75,
+        "name": "ldind.u4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 76,
+        "name": "ldind.i8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 77,
+        "name": "ldind.i",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 78,
+        "name": "ldind.r4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 79,
+        "name": "ldind.r8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 80,
+        "name": "ldind.ref",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 81,
+        "name": "stind.ref",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 82,
+        "name": "stind.i1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 83,
+        "name": "stind.i2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 84,
+        "name": "stind.i4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 85,
+        "name": "stind.i8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 86,
+        "name": "stind.r4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 87,
+        "name": "stind.r8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 88,
+        "name": "add",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 89,
+        "name": "sub",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 90,
+        "name": "mul",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 91,
+        "name": "div",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 92,
+        "name": "div.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 93,
+        "name": "rem",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 94,
+        "name": "rem.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 95,
+        "name": "and",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 96,
+        "name": "or",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 97,
+        "name": "xor",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 98,
+        "name": "shl",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 99,
+        "name": "shr",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 100,
+        "name": "shr.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 101,
+        "name": "neg",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 102,
+        "name": "not",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 103,
+        "name": "conv.i1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 104,
+        "name": "conv.i2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 105,
+        "name": "conv.i4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 106,
+        "name": "conv.i8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 107,
+        "name": "conv.r4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 108,
+        "name": "conv.r8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 109,
+        "name": "conv.u4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 110,
+        "name": "conv.u8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 111,
+        "name": "callvirt",
+        "operand": "InlineMethod"
+      },
+      {
+        "value": 112,
+        "name": "cpobj",
+        "operand": "InlineType"
+      },
+      {
+        "value": 113,
+        "name": "ldobj",
+        "operand": "InlineType"
+      },
+      {
+        "value": 114,
+        "name": "ldstr",
+        "operand": "InlineString"
+      },
+      {
+        "value": 115,
+        "name": "newobj",
+        "operand": "InlineMethod"
+      },
+      {
+        "value": 116,
+        "name": "castclass",
+        "operand": "InlineType"
+      },
+      {
+        "value": 117,
+        "name": "isinst",
+        "operand": "InlineType"
+      },
+      {
+        "value": 118,
+        "name": "conv.r.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 121,
+        "name": "unbox",
+        "operand": "InlineType"
+      },
+      {
+        "value": 122,
+        "name": "throw",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 123,
+        "name": "ldfld",
+        "operand": "InlineField"
+      },
+      {
+        "value": 124,
+        "name": "ldflda",
+        "operand": "InlineField"
+      },
+      {
+        "value": 125,
+        "name": "stfld",
+        "operand": "InlineField"
+      },
+      {
+        "value": 126,
+        "name": "ldsfld",
+        "operand": "InlineField"
+      },
+      {
+        "value": 127,
+        "name": "ldsflda",
+        "operand": "InlineField"
+      },
+      {
+        "value": 128,
+        "name": "stsfld",
+        "operand": "InlineField"
+      },
+      {
+        "value": 129,
+        "name": "stobj",
+        "operand": "InlineType"
+      },
+      {
+        "value": 130,
+        "name": "conv.ovf.i1.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 131,
+        "name": "conv.ovf.i2.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 132,
+        "name": "conv.ovf.i4.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 133,
+        "name": "conv.ovf.i8.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 134,
+        "name": "conv.ovf.u1.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 135,
+        "name": "conv.ovf.u2.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 136,
+        "name": "conv.ovf.u4.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 137,
+        "name": "conv.ovf.u8.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 138,
+        "name": "conv.ovf.i.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 139,
+        "name": "conv.ovf.u.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 140,
+        "name": "box",
+        "operand": "InlineType"
+      },
+      {
+        "value": 141,
+        "name": "newarr",
+        "operand": "InlineType"
+      },
+      {
+        "value": 142,
+        "name": "ldlen",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 143,
+        "name": "ldelema",
+        "operand": "InlineType"
+      },
+      {
+        "value": 144,
+        "name": "ldelem.i1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 145,
+        "name": "ldelem.u1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 146,
+        "name": "ldelem.i2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 147,
+        "name": "ldelem.u2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 148,
+        "name": "ldelem.i4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 149,
+        "name": "ldelem.u4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 150,
+        "name": "ldelem.i8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 151,
+        "name": "ldelem.i",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 152,
+        "name": "ldelem.r4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 153,
+        "name": "ldelem.r8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 154,
+        "name": "ldelem.ref",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 155,
+        "name": "stelem.i",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 156,
+        "name": "stelem.i1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 157,
+        "name": "stelem.i2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 158,
+        "name": "stelem.i4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 159,
+        "name": "stelem.i8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 160,
+        "name": "stelem.r4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 161,
+        "name": "stelem.r8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 162,
+        "name": "stelem.ref",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 163,
+        "name": "ldelem",
+        "operand": "InlineType"
+      },
+      {
+        "value": 164,
+        "name": "stelem",
+        "operand": "InlineType"
+      },
+      {
+        "value": 165,
+        "name": "unbox.any",
+        "operand": "InlineType"
+      },
+      {
+        "value": 179,
+        "name": "conv.ovf.i1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 180,
+        "name": "conv.ovf.u1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 181,
+        "name": "conv.ovf.i2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 182,
+        "name": "conv.ovf.u2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 183,
+        "name": "conv.ovf.i4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 184,
+        "name": "conv.ovf.u4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 185,
+        "name": "conv.ovf.i8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 186,
+        "name": "conv.ovf.u8",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 194,
+        "name": "refanyval",
+        "operand": "InlineType"
+      },
+      {
+        "value": 195,
+        "name": "ckfinite",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 198,
+        "name": "mkrefany",
+        "operand": "InlineType"
+      },
+      {
+        "value": 208,
+        "name": "ldtoken",
+        "operand": "InlineTok"
+      },
+      {
+        "value": 209,
+        "name": "conv.u2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 210,
+        "name": "conv.u1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 211,
+        "name": "conv.i",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 212,
+        "name": "conv.ovf.i",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 213,
+        "name": "conv.ovf.u",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 214,
+        "name": "add.ovf",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 215,
+        "name": "add.ovf.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 216,
+        "name": "mul.ovf",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 217,
+        "name": "mul.ovf.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 218,
+        "name": "sub.ovf",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 219,
+        "name": "sub.ovf.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 220,
+        "name": "endfinally",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 221,
+        "name": "leave",
+        "operand": "InlineBrTarget"
+      },
+      {
+        "value": 222,
+        "name": "leave.s",
+        "operand": "ShortInlineBrTarget"
+      },
+      {
+        "value": 223,
+        "name": "stind.i",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 224,
+        "name": "conv.u",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 248,
+        "name": "prefix7",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 249,
+        "name": "prefix6",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 250,
+        "name": "prefix5",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 251,
+        "name": "prefix4",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 252,
+        "name": "prefix3",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 253,
+        "name": "prefix2",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 254,
+        "name": "prefix1",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 255,
+        "name": "prefixref",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65024,
+        "name": "arglist",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65025,
+        "name": "ceq",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65026,
+        "name": "cgt",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65027,
+        "name": "cgt.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65028,
+        "name": "clt",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65029,
+        "name": "clt.un",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65030,
+        "name": "ldftn",
+        "operand": "InlineMethod"
+      },
+      {
+        "value": 65031,
+        "name": "ldvirtftn",
+        "operand": "InlineMethod"
+      },
+      {
+        "value": 65033,
+        "name": "ldarg",
+        "operand": "InlineVar"
+      },
+      {
+        "value": 65034,
+        "name": "ldarga",
+        "operand": "InlineVar"
+      },
+      {
+        "value": 65035,
+        "name": "starg",
+        "operand": "InlineVar"
+      },
+      {
+        "value": 65036,
+        "name": "ldloc",
+        "operand": "InlineVar"
+      },
+      {
+        "value": 65037,
+        "name": "ldloca",
+        "operand": "InlineVar"
+      },
+      {
+        "value": 65038,
+        "name": "stloc",
+        "operand": "InlineVar"
+      },
+      {
+        "value": 65039,
+        "name": "localloc",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65041,
+        "name": "endfilter",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65042,
+        "name": "unaligned.",
+        "operand": "ShortInlineI"
+      },
+      {
+        "value": 65043,
+        "name": "volatile.",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65044,
+        "name": "tail.",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65045,
+        "name": "initobj",
+        "operand": "InlineType"
+      },
+      {
+        "value": 65046,
+        "name": "constrained.",
+        "operand": "InlineType"
+      },
+      {
+        "value": 65047,
+        "name": "cpblk",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65048,
+        "name": "initblk",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65050,
+        "name": "rethrow",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65052,
+        "name": "sizeof",
+        "operand": "InlineType"
+      },
+      {
+        "value": 65053,
+        "name": "refanytype",
+        "operand": "InlineNone"
+      },
+      {
+        "value": 65054,
+        "name": "readonly.",
+        "operand": "InlineNone"
+      }
+    ],
+    "symbolSelection": "overlapping-four-byte-candidates-not-call-evidence",
+    "targetPipeMethodsInvoked": false,
+    "targetAssemblyLoadedByReader": false,
+    "listenerCreated": false,
+    "identityQueried": false,
+    "peerBindingProven": false
+  }
+}

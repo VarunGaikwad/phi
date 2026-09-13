@@ -13,7 +13,7 @@ are not covered by this candidate. Actual Windows build and installed Docker
 Desktop/CLI and WSL versions are now recorded in
 [native Windows execution evidence](Windows-Phase-0-Run.md). On retry, Engine
 **29.4.3**, Docker Desktop Linux and WSL2 kernel metadata were observed. Remaining
-active settings and containment are unverified.
+active settings and the complete containment boundary are unverified.
 
 After the initial engine/image blockers, the operator explicitly approved the
 Node image download. The corrected native fixture **passed all ten checks and
@@ -27,9 +27,11 @@ The operator subsequently deferred provider/authentication-method and gateway
 work. A separate [host-only synthetic-copy experiment](Synthetic-Copy-Prototype.md)
 passed seven checks and cleanup. It is not connected to this container fixture,
 not a production admission service, and not whole-agent or NTFS race-safety proof.
-The subsequent [offline whole-agent runner](Offline-Agent-Prototype.md) now
-implements an integrated experiment, with local unit/syntax coverage only; its
-native Windows/Docker run remains pending. Retain gateway acceptance as deferred.
+The subsequent [offline whole-agent runner](Offline-Agent-Prototype.md) now has an
+independent [native Windows pass](Windows-Offline-Agent-Run.md): all **20 checks**,
+including real SDK/tool/inline-extension execution, synthetic copy, host stop and
+cleanup. This does not establish production admission, complete containment or
+full lifecycle/recovery. Retain gateway acceptance as deferred.
 
 ## What has been implemented
 

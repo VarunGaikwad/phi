@@ -16,7 +16,7 @@ export async function runOfflineAgentCli(args: readonly string[], io: ProbeIO): 
   let options: ReturnType<typeof parseProbeArguments>;
   try { options = parseProbeArguments(args); } catch { io.error(USAGE); return 64; }
   if (options === "help") {
-    io.out(USAGE + "Opt-in Windows-only whole-agent OFFLINE experiment. Uses existing pinned pi 0.85.1 artifacts and the local Node image. Transfers only reviewed runtime bytes and disposable synthetic files, without host mounts, installs, downloads, credentials or host apply.\nExercises pi/tools/an inline extension and a detached child; kills and removes the owned container. NOT Guard acceptance; gateway work remains deferred. Read plan/Offline-Agent-Prototype.md first.\n");
+    io.out(USAGE + "Opt-in Windows-only whole-agent OFFLINE experiment. Uses existing pinned pi 0.85.1 artifacts and the local Node image. Transfers only reviewed runtime bytes and disposable synthetic files, without host mounts, installs, downloads, credentials or host apply.\nExercises pi/tools/inline extensions, guest-only persisted sessions, transitions, cancellation, deliberate extension failures and a detached child; kills and removes the owned container. NOT Guard acceptance; gateway work remains deferred. Read plan/Offline-Agent-Prototype.md and plan/Agent-Lifecycle-Prototype.md first.\n");
     return 0;
   }
   if (process.platform !== "win32") {

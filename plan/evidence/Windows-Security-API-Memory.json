@@ -1,0 +1,64 @@
+{
+  "observedAt": "2026-09-12T12:58:22.045Z",
+  "node": "22.23.0",
+  "sourceSha256": "ff1afca553f490fdcae12dd51e77cca5c70db91bc8ae5a757d9ddffc33eb3393",
+  "signature": "Valid / Microsoft (separately checked)",
+  "result": {
+    "version": 1,
+    "kind": "windows-security-api-memory-review",
+    "state": "locked",
+    "protection": "not-active",
+    "canLaunch": false,
+    "executable": false,
+    "gateway": "deferred",
+    "scope": "reflection-and-synthetic-memory-only",
+    "powershell": "5.1.26100.9444",
+    "clr": "4.0.30319.42000",
+    "pipeOptions": [
+      "None",
+      "Asynchronous",
+      "WriteThrough"
+    ],
+    "fileOptions": [
+      "None",
+      "Encrypted",
+      "DeleteOnClose",
+      "SequentialScan",
+      "RandomAccess",
+      "Asynchronous",
+      "WriteThrough"
+    ],
+    "fileSecurityConstructors": [
+      "Void .ctor(System.String, System.IO.FileMode, System.Security.AccessControl.FileSystemRights, System.IO.FileShare, Int32, System.IO.FileOptions, System.Security.AccessControl.FileSecurity)"
+    ],
+    "directorySecurityCreators": [
+      "System.IO.DirectoryInfo CreateDirectory(System.String, System.Security.AccessControl.DirectorySecurity)"
+    ],
+    "pipeSecurityConstructors": [
+      "Void .ctor(System.String, System.IO.Pipes.PipeDirection, Int32, System.IO.Pipes.PipeTransmissionMode, System.IO.Pipes.PipeOptions, Int32, Int32, System.IO.Pipes.PipeSecurity)",
+      "Void .ctor(System.String, System.IO.Pipes.PipeDirection, Int32, System.IO.Pipes.PipeTransmissionMode, System.IO.Pipes.PipeOptions, Int32, Int32, System.IO.Pipes.PipeSecurity, System.IO.HandleInheritability)",
+      "Void .ctor(System.String, System.IO.Pipes.PipeDirection, Int32, System.IO.Pipes.PipeTransmissionMode, System.IO.Pipes.PipeOptions, Int32, Int32, System.IO.Pipes.PipeSecurity, System.IO.HandleInheritability, System.IO.Pipes.PipeAccessRights)"
+    ],
+    "fileHandleAclRead": true,
+    "pipeHandleAclRead": true,
+    "pipePeerMethods": [
+      "Void RunAsClient(System.IO.Pipes.PipeStreamImpersonationWorker)",
+      "System.String GetImpersonationUserName()"
+    ],
+    "fileRuleMask": 2032127,
+    "pipeRuleMask": 1180059,
+    "pipeFullControlIncludesCreateInstance": true,
+    "pipeReadWriteIncludesCreateInstance": false,
+    "descriptors": {
+      "file": "AQAEkBQAAAAwAAAAAAAAAEwAAAABBQAAAAAABRUAAABkAAAAyAAAACwBAADpAwAAAQUAAAAAAAUVAAAAZAAAAMgAAAAsAQAA6QMAAAIALAABAAAAAAAkAP8BHwABBQAAAAAABRUAAABkAAAAyAAAACwBAADpAwAA",
+      "pipe": "AQAEkBQAAAAwAAAAAAAAAEwAAAABBQAAAAAABRUAAABkAAAAyAAAACwBAADpAwAAAQUAAAAAAAUVAAAAZAAAAMgAAAAsAQAA6QMAAAIALAABAAAAAAAkAJsBEgABBQAAAAAABRUAAABkAAAAyAAAACwBAADpAwAA",
+      "nullDacl": "AQAEgBQAAAAwAAAAAAAAAAAAAAABBQAAAAAABRUAAABkAAAAyAAAACwBAADpAwAAAQUAAAAAAAUVAAAAZAAAAMgAAAAsAQAA6QMAAA==",
+      "emptyDacl": "AQAEkBQAAAAwAAAAAAAAAEwAAAABBQAAAAAABRUAAABkAAAAyAAAACwBAADpAwAAAQUAAAAAAAUVAAAAZAAAAMgAAAAsAQAA6QMAAAIACAAAAAAA"
+    },
+    "fileCreated": false,
+    "pipeCreated": false,
+    "realIdentityRead": false,
+    "accessCheckPerformed": false,
+    "nativePrivacyProven": false
+  }
+}

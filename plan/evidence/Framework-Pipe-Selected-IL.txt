@@ -1,0 +1,596 @@
+STATIC IL ONLY; target pipe methods were NOT invoked.
+Assembly SHA256: fd1097aed825d392a5dc8d19384381d4bb2a43498ea1c9d917f5d80c66600e1b
+
+System.IO.Pipes.NamedPipeServerStream::.ctor token=0x60004da signature=IAoBDhGCrAgRgrARgrQICBKC7BGCiBGC4A==
+0000  ldarg.0
+0001  ldarg.2
+0002  ldarg.s 4
+0004  ldarg.s 7
+0006  call "System.IO.Pipes.PipeStream::.ctor [0x6000508]"
+000b  ldarg.1
+000c  brtrue.s 25
+000e  ldstr 1879059306
+0013  newobj "System.ArgumentNullException::.ctor [0xa000097]"
+0018  throw
+0019  ldarg.1
+001a  callvirt "System.String::get_Length [0xa00007f]"
+001f  brtrue.s 49
+0021  ldstr 1879059324
+0026  call "System.SR::GetString [0x6000164]"
+002b  newobj "System.ArgumentException::.ctor [0xa00009f]"
+0030  throw
+0031  ldarg.s 5
+0033  ldc.i4 1073741823
+0038  and
+0039  brfalse.s 80
+003b  ldstr 1879051919
+0040  ldstr 1879059384
+0045  call "System.SR::GetString [0x6000164]"
+004a  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+004f  throw
+0050  ldarg.s 6
+0052  ldc.i4.0
+0053  bge.s 106
+0055  ldstr 1879059452
+005a  ldstr 1879055289
+005f  call "System.SR::GetString [0x6000164]"
+0064  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+0069  throw
+006a  ldarg.3
+006b  ldc.i4.1
+006c  blt.s 118
+006e  ldarg.3
+006f  ldc.i4 254
+0074  ble.s 143
+0076  ldarg.3
+0077  ldc.i4.m1
+0078  beq.s 143
+007a  ldstr 1879059478
+007f  ldstr 1879059532
+0084  call "System.SR::GetString [0x6000164]"
+0089  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+008e  throw
+008f  ldarg.s 9
+0091  ldc.i4.0
+0092  blt.s 153
+0094  ldarg.s 9
+0096  ldc.i4.1
+0097  ble.s 174
+0099  ldstr 1879057325
+009e  ldstr 1879058762
+00a3  call "System.SR::GetString [0x6000164]"
+00a8  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+00ad  throw
+00ae  ldarg.s 10
+00b0  ldc.i4 -17563649
+00b5  and
+00b6  brfalse.s 205
+00b8  ldstr 1879059614
+00bd  ldstr 1879059660
+00c2  call "System.SR::GetString [0x6000164]"
+00c7  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+00cc  throw
+00cd  call "System.Environment::get_OSVersion [0xa00022a]"
+00d2  callvirt "System.OperatingSystem::get_Platform [0xa00022b]"
+00d7  ldc.i4.1
+00d8  bne.un.s 234
+00da  ldstr 1879059746
+00df  call "System.SR::GetString [0x6000164]"
+00e4  newobj "System.PlatformNotSupportedException::.ctor [0xa0000e5]"
+00e9  throw
+00ea  ldstr 1879059822
+00ef  ldarg.1
+00f0  call "System.String::Concat [0xa00009b]"
+00f5  call "System.IO.Path::GetFullPath [0xa0001f9]"
+00fa  stloc.0
+00fb  ldloc.0
+00fc  ldstr 1879059842
+0101  ldc.i4.5
+0102  call "System.String::Compare [0xa00022c]"
+0107  brtrue.s 286
+0109  ldstr 1879059306
+010e  ldstr 1879059880
+0113  call "System.SR::GetString [0x6000164]"
+0118  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+011d  throw
+011e  ldnull
+011f  stloc.1
+0120  ldarg.s 9
+0122  ldarg.s 8
+0124  ldloca.s 1
+0126  call "System.IO.Pipes.PipeStream::GetSecAttrs [0x6000539]"
+012b  stloc.2
+012c  ldarg.0
+012d  ldloc.0
+012e  ldarg.2
+012f  ldarg.3
+0130  ldarg.s 4
+0132  ldarg.s 5
+0134  ldarg.s 6
+0136  ldarg.s 7
+0138  ldarg.s 10
+013a  ldloc.2
+013b  call "System.IO.Pipes.NamedPipeServerStream::Create [0x60004dd]"
+0140  leave.s 340
+0142  ldloc.1
+0143  brfalse.s 339
+0145  ldloc.1
+0146  unbox.any "System.Runtime.InteropServices.GCHandle [0x100002f]"
+014b  stloc.3
+014c  ldloca.s 3
+014e  call "System.Runtime.InteropServices.GCHandle::Free [0xa00013f]"
+0153  endfinally
+0154  ret
+
+System.IO.Pipes.NamedPipeServerStream::Create token=0x60004dd signature=IAkBDhGCrAgRgrARgrQICBGC4BKLYA==
+0000  ldarg.2
+0001  ldarg.3
+0002  ldc.i4.1
+0003  beq.s 8
+0005  ldc.i4.0
+0006  br.s 13
+0008  ldc.i4 524288
+000d  or
+000e  ldarg.s 5
+0010  or
+0011  ldarg.s 8
+0013  or
+0014  stloc.0
+0015  ldarg.s 4
+0017  ldc.i4.2
+0018  shl
+0019  ldarg.s 4
+001b  ldc.i4.1
+001c  shl
+001d  or
+001e  stloc.1
+001f  ldarg.3
+0020  ldc.i4.m1
+0021  bne.un.s 42
+0023  ldc.i4 255
+0028  starg.s 3
+002a  ldarg.1
+002b  ldloc.0
+002c  ldloc.1
+002d  ldarg.3
+002e  ldarg.s 7
+0030  ldarg.s 6
+0032  ldc.i4.0
+0033  ldarg.s 9
+0035  call "Microsoft.Win32.UnsafeNativeMethods::CreateNamedPipe [0x600007a]"
+003a  stloc.2
+003b  ldloc.2
+003c  callvirt "System.Runtime.InteropServices.SafeHandle::get_IsInvalid [0xa0000a1]"
+0041  brfalse.s 82
+0043  call "System.Runtime.InteropServices.Marshal::GetLastWin32Error [0xa0000a3]"
+0048  ldsfld "System.String::Empty [0xa0000bb]"
+004d  call "System.IO.__Error::WinIOError [0x6000450]"
+0052  ldarg.0
+0053  ldloc.2
+0054  ldc.i4.0
+0055  ldarg.s 5
+0057  ldc.i4 1073741824
+005c  and
+005d  ldc.i4.0
+005e  cgt.un
+0060  call "System.IO.Pipes.PipeStream::InitializeHandle [0x600050a]"
+0065  ret
+
+System.IO.Pipes.NamedPipeClientStream::.ctor token=0x60004f0 signature=IAYBDg4RgqwRgrQRgS0Rgog=
+0000  ldarg.0
+0001  ldarg.3
+0002  ldc.i4.0
+0003  call "System.IO.Pipes.PipeStream::.ctor [0x6000507]"
+0008  ldarg.2
+0009  brtrue.s 22
+000b  ldstr 1879059306
+0010  newobj "System.ArgumentNullException::.ctor [0xa000097]"
+0015  throw
+0016  ldarg.1
+0017  brtrue.s 46
+0019  ldstr 1879060372
+001e  ldstr 1879060394
+0023  call "System.SR::GetString [0x6000164]"
+0028  newobj "System.ArgumentNullException::.ctor [0xa0001f2]"
+002d  throw
+002e  ldarg.2
+002f  callvirt "System.String::get_Length [0xa00007f]"
+0034  brtrue.s 70
+0036  ldstr 1879059324
+003b  call "System.SR::GetString [0x6000164]"
+0040  newobj "System.ArgumentException::.ctor [0xa00009f]"
+0045  throw
+0046  ldarg.1
+0047  callvirt "System.String::get_Length [0xa00007f]"
+004c  brtrue.s 94
+004e  ldstr 1879060442
+0053  call "System.SR::GetString [0x6000164]"
+0058  newobj "System.ArgumentException::.ctor [0xa00009f]"
+005d  throw
+005e  ldarg.s 4
+0060  ldc.i4 1073741823
+0065  and
+0066  brfalse.s 125
+0068  ldstr 1879051919
+006d  ldstr 1879059384
+0072  call "System.SR::GetString [0x6000164]"
+0077  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+007c  throw
+007d  ldarg.s 5
+007f  ldc.i4.0
+0080  blt.s 135
+0082  ldarg.s 5
+0084  ldc.i4.4
+0085  ble.s 156
+0087  ldstr 1879060492
+008c  ldstr 1879060530
+0091  call "System.SR::GetString [0x6000164]"
+0096  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+009b  throw
+009c  ldarg.s 6
+009e  ldc.i4.0
+009f  blt.s 166
+00a1  ldarg.s 6
+00a3  ldc.i4.1
+00a4  ble.s 187
+00a6  ldstr 1879057325
+00ab  ldstr 1879058762
+00b0  call "System.SR::GetString [0x6000164]"
+00b5  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+00ba  throw
+00bb  ldarg.0
+00bc  ldstr 1879060610
+00c1  ldarg.1
+00c2  ldstr 1879060616
+00c7  ldarg.2
+00c8  call "System.String::Concat [0xa00023f]"
+00cd  call "System.IO.Path::GetFullPath [0xa0001f9]"
+00d2  stfld "System.IO.Pipes.NamedPipeClientStream::m_normalizedPipePath [0x4000555]"
+00d7  ldarg.0
+00d8  ldfld "System.IO.Pipes.NamedPipeClientStream::m_normalizedPipePath [0x4000555]"
+00dd  ldstr 1879059842
+00e2  ldc.i4.5
+00e3  call "System.String::Compare [0xa00022c]"
+00e8  brtrue.s 255
+00ea  ldstr 1879059306
+00ef  ldstr 1879059880
+00f4  call "System.SR::GetString [0x6000164]"
+00f9  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+00fe  throw
+00ff  ldarg.0
+0100  ldarg.s 6
+0102  stfld "System.IO.Pipes.NamedPipeClientStream::m_inheritability [0x4000558]"
+0107  ldarg.0
+0108  ldarg.s 5
+010a  stfld "System.IO.Pipes.NamedPipeClientStream::m_impersonationLevel [0x4000556]"
+010f  ldarg.0
+0110  ldarg.s 4
+0112  stfld "System.IO.Pipes.NamedPipeClientStream::m_pipeOptions [0x4000557]"
+0117  ldc.i4.1
+0118  ldarg.3
+0119  and
+011a  brfalse.s 302
+011c  ldarg.0
+011d  ldarg.0
+011e  ldfld "System.IO.Pipes.NamedPipeClientStream::m_access [0x4000559]"
+0123  ldc.i4 -2147483648
+0128  or
+0129  stfld "System.IO.Pipes.NamedPipeClientStream::m_access [0x4000559]"
+012e  ldc.i4.2
+012f  ldarg.3
+0130  and
+0131  brfalse.s 325
+0133  ldarg.0
+0134  ldarg.0
+0135  ldfld "System.IO.Pipes.NamedPipeClientStream::m_access [0x4000559]"
+013a  ldc.i4 1073741824
+013f  or
+0140  stfld "System.IO.Pipes.NamedPipeClientStream::m_access [0x4000559]"
+0145  ret
+
+System.IO.Pipes.NamedPipeClientStream::.ctor token=0x60004f1 signature=IAYBDg4RguARgrQRgS0Rgog=
+0000  ldarg.0
+0001  ldarg.3
+0002  call "System.IO.Pipes.NamedPipeClientStream::DirectionFromRights [0x60004f2]"
+0007  ldc.i4.0
+0008  call "System.IO.Pipes.PipeStream::.ctor [0x6000507]"
+000d  ldarg.2
+000e  brtrue.s 27
+0010  ldstr 1879059306
+0015  newobj "System.ArgumentNullException::.ctor [0xa000097]"
+001a  throw
+001b  ldarg.1
+001c  brtrue.s 51
+001e  ldstr 1879060372
+0023  ldstr 1879060394
+0028  call "System.SR::GetString [0x6000164]"
+002d  newobj "System.ArgumentNullException::.ctor [0xa0001f2]"
+0032  throw
+0033  ldarg.2
+0034  callvirt "System.String::get_Length [0xa00007f]"
+0039  brtrue.s 75
+003b  ldstr 1879059324
+0040  call "System.SR::GetString [0x6000164]"
+0045  newobj "System.ArgumentException::.ctor [0xa00009f]"
+004a  throw
+004b  ldarg.1
+004c  callvirt "System.String::get_Length [0xa00007f]"
+0051  brtrue.s 99
+0053  ldstr 1879060442
+0058  call "System.SR::GetString [0x6000164]"
+005d  newobj "System.ArgumentException::.ctor [0xa00009f]"
+0062  throw
+0063  ldarg.s 4
+0065  ldc.i4 1073741823
+006a  and
+006b  brfalse.s 130
+006d  ldstr 1879051919
+0072  ldstr 1879059384
+0077  call "System.SR::GetString [0x6000164]"
+007c  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+0081  throw
+0082  ldarg.s 5
+0084  ldc.i4.0
+0085  blt.s 140
+0087  ldarg.s 5
+0089  ldc.i4.4
+008a  ble.s 161
+008c  ldstr 1879060492
+0091  ldstr 1879060530
+0096  call "System.SR::GetString [0x6000164]"
+009b  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+00a0  throw
+00a1  ldarg.s 6
+00a3  ldc.i4.0
+00a4  blt.s 171
+00a6  ldarg.s 6
+00a8  ldc.i4.1
+00a9  ble.s 192
+00ab  ldstr 1879057325
+00b0  ldstr 1879058762
+00b5  call "System.SR::GetString [0x6000164]"
+00ba  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+00bf  throw
+00c0  ldarg.3
+00c1  ldc.i4 -18809248
+00c6  and
+00c7  brfalse.s 222
+00c9  ldstr 1879057355
+00ce  ldstr 1879060630
+00d3  call "System.SR::GetString [0x6000164]"
+00d8  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+00dd  throw
+00de  ldarg.0
+00df  ldstr 1879060610
+00e4  ldarg.1
+00e5  ldstr 1879060616
+00ea  ldarg.2
+00eb  call "System.String::Concat [0xa00023f]"
+00f0  call "System.IO.Path::GetFullPath [0xa0001f9]"
+00f5  stfld "System.IO.Pipes.NamedPipeClientStream::m_normalizedPipePath [0x4000555]"
+00fa  ldarg.0
+00fb  ldfld "System.IO.Pipes.NamedPipeClientStream::m_normalizedPipePath [0x4000555]"
+0100  ldstr 1879059842
+0105  ldc.i4.5
+0106  call "System.String::Compare [0xa00022c]"
+010b  brtrue.s 290
+010d  ldstr 1879059306
+0112  ldstr 1879059880
+0117  call "System.SR::GetString [0x6000164]"
+011c  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+0121  throw
+0122  ldarg.0
+0123  ldarg.s 6
+0125  stfld "System.IO.Pipes.NamedPipeClientStream::m_inheritability [0x4000558]"
+012a  ldarg.0
+012b  ldarg.s 5
+012d  stfld "System.IO.Pipes.NamedPipeClientStream::m_impersonationLevel [0x4000556]"
+0132  ldarg.0
+0133  ldarg.s 4
+0135  stfld "System.IO.Pipes.NamedPipeClientStream::m_pipeOptions [0x4000557]"
+013a  ldarg.0
+013b  ldarg.3
+013c  stfld "System.IO.Pipes.NamedPipeClientStream::m_access [0x4000559]"
+0141  ret
+
+System.IO.Pipes.NamedPipeClientStream::Connect token=0x60004f5 signature=IAAB
+0000  ldarg.0
+0001  ldc.i4.m1
+0002  call "System.IO.Pipes.NamedPipeClientStream::Connect [0x60004f6]"
+0007  ret
+
+System.IO.Pipes.NamedPipeClientStream::Connect token=0x60004f6 signature=IAEBCA==
+0000  ldarg.0
+0001  call "System.IO.Pipes.NamedPipeClientStream::CheckConnectOperationsClient [0x60004fe]"
+0006  ldarg.1
+0007  ldc.i4.0
+0008  bge.s 35
+000a  ldarg.1
+000b  ldc.i4.m1
+000c  beq.s 35
+000e  ldstr 1879060716
+0013  ldstr 1879060732
+0018  call "System.SR::GetString [0x6000164]"
+001d  newobj "System.ArgumentOutOfRangeException::.ctor [0xa000099]"
+0022  throw
+0023  ldarg.0
+0024  ldfld "System.IO.Pipes.NamedPipeClientStream::m_inheritability [0x4000558]"
+0029  call "System.IO.Pipes.PipeStream::GetSecAttrs [0x600053a]"
+002e  stloc.0
+002f  ldarg.0
+0030  ldfld "System.IO.Pipes.NamedPipeClientStream::m_pipeOptions [0x4000557]"
+0035  stloc.1
+0036  ldarg.0
+0037  ldfld "System.IO.Pipes.NamedPipeClientStream::m_impersonationLevel [0x4000556]"
+003c  brfalse.s 84
+003e  ldloc.1
+003f  ldc.i4 1048576
+0044  or
+0045  stloc.1
+0046  ldloc.1
+0047  ldarg.0
+0048  ldfld "System.IO.Pipes.NamedPipeClientStream::m_impersonationLevel [0x4000556]"
+004d  ldc.i4.1
+004e  sub
+004f  ldc.i4.s 16
+0051  shl
+0052  or
+0053  stloc.1
+0054  call "System.Environment::get_TickCount [0xa00015b]"
+0059  stloc.2
+005a  ldc.i4.0
+005b  stloc.3
+005c  ldloca.s 4
+005e  initobj "System.Threading.SpinWait [0x1000151]"
+0064  ldarg.0
+0065  ldfld "System.IO.Pipes.NamedPipeClientStream::m_normalizedPipePath [0x4000555]"
+006a  ldarg.1
+006b  ldloc.3
+006c  sub
+006d  call "Microsoft.Win32.UnsafeNativeMethods::WaitNamedPipe [0x600006e]"
+0072  brtrue.s 156
+0074  call "System.Runtime.InteropServices.Marshal::GetLastWin32Error [0xa0000a3]"
+0079  stloc.s 6
+007b  ldloc.s 6
+007d  ldc.i4.2
+007e  bne.un.s 137
+0080  ldloca.s 4
+0082  call "System.Threading.SpinWait::SpinOnce [0xa000240]"
+0087  br.s 262
+0089  ldloc.s 6
+008b  brfalse 284
+0090  ldloc.s 6
+0092  ldsfld "System.String::Empty [0xa0000bb]"
+0097  call "System.IO.__Error::WinIOError [0x6000450]"
+009c  ldarg.0
+009d  ldfld "System.IO.Pipes.NamedPipeClientStream::m_normalizedPipePath [0x4000555]"
+00a2  ldarg.0
+00a3  ldfld "System.IO.Pipes.NamedPipeClientStream::m_access [0x4000559]"
+00a8  ldc.i4.0
+00a9  ldloc.0
+00aa  ldc.i4.3
+00ab  ldloc.1
+00ac  ldsfld "Microsoft.Win32.UnsafeNativeMethods::NULL [0x4000077]"
+00b1  call "Microsoft.Win32.UnsafeNativeMethods::CreateNamedPipeClient [0x600006b]"
+00b6  stloc.s 5
+00b8  ldloc.s 5
+00ba  callvirt "System.Runtime.InteropServices.SafeHandle::get_IsInvalid [0xa0000a1]"
+00bf  brfalse.s 230
+00c1  call "System.Runtime.InteropServices.Marshal::GetLastWin32Error [0xa0000a3]"
+00c6  stloc.s 7
+00c8  ldloc.s 7
+00ca  ldc.i4 231
+00cf  bne.un.s 218
+00d1  ldloca.s 4
+00d3  call "System.Threading.SpinWait::SpinOnce [0xa000240]"
+00d8  br.s 262
+00da  ldloc.s 7
+00dc  ldsfld "System.String::Empty [0xa0000bb]"
+00e1  call "System.IO.__Error::WinIOError [0x6000450]"
+00e6  ldarg.0
+00e7  ldloc.s 5
+00e9  ldc.i4.0
+00ea  ldarg.0
+00eb  ldfld "System.IO.Pipes.NamedPipeClientStream::m_pipeOptions [0x4000557]"
+00f0  ldc.i4 1073741824
+00f5  and
+00f6  ldc.i4.0
+00f7  cgt.un
+00f9  call "System.IO.Pipes.PipeStream::InitializeHandle [0x600050a]"
+00fe  ldarg.0
+00ff  ldc.i4.1
+0100  call "System.IO.Pipes.PipeStream::set_State [0x6000538]"
+0105  ret
+0106  ldarg.1
+0107  ldc.i4.m1
+0108  beq 100
+010d  call "System.Environment::get_TickCount [0xa00015b]"
+0112  ldloc.2
+0113  sub
+0114  dup
+0115  stloc.3
+0116  ldarg.1
+0117  blt 100
+011c  newobj "System.TimeoutException::.ctor [0xa000241]"
+0121  throw
+
+System.IO.Pipes.PipeStream::GetSecAttrs token=0x6000539 signature=AAMSi2ARgogSguwQHA==
+0000  ldarg.2
+0001  ldnull
+0002  stind.ref
+0003  ldnull
+0004  stloc.0
+0005  ldarg.0
+0006  ldc.i4.1
+0007  and
+0008  brtrue.s 13
+000a  ldarg.1
+000b  brfalse.s 100
+000d  newobj "SECURITY_ATTRIBUTES::.ctor [0x6001a3e]"
+0012  stloc.0
+0013  ldloc.0
+0014  ldloc.0
+0015  call "System.Runtime.InteropServices.Marshal::SizeOf [0xa000202]"
+001a  stfld "SECURITY_ATTRIBUTES::nLength [0x4000ce6]"
+001f  ldarg.0
+0020  ldc.i4.1
+0021  and
+0022  brfalse.s 43
+0024  ldloc.0
+0025  ldc.i4.1
+0026  stfld "SECURITY_ATTRIBUTES::bInheritHandle [0x4000ce8]"
+002b  ldarg.1
+002c  brfalse.s 100
+002e  ldarg.1
+002f  callvirt "System.Security.AccessControl.ObjectSecurity::GetSecurityDescriptorBinaryForm [0xa00020a]"
+0034  stloc.1
+0035  ldarg.2
+0036  ldloc.1
+0037  ldc.i4.3
+0038  call "System.Runtime.InteropServices.GCHandle::Alloc [0xa00013d]"
+003d  box "System.Runtime.InteropServices.GCHandle [0x100002f]"
+0042  stind.ref
+0043  ldloc.1
+0044  dup
+0045  stloc.3
+0046  brfalse.s 77
+0048  ldloc.3
+0049  ldlen
+004a  conv.i4
+004b  brtrue.s 82
+004d  ldc.i4.0
+004e  conv.u
+004f  stloc.2
+0050  br.s 91
+0052  ldloc.3
+0053  ldc.i4.0
+0054  ldelema "System.Byte [0x10000fc]"
+0059  conv.u
+005a  stloc.2
+005b  ldloc.0
+005c  ldloc.2
+005d  stfld "SECURITY_ATTRIBUTES::pSecurityDescriptor [0x4000ce7]"
+0062  ldnull
+0063  stloc.3
+0064  ldloc.0
+0065  ret
+
+System.IO.Pipes.PipeStream::GetSecAttrs token=0x600053a signature=AAESi2ARgog=
+0000  ldnull
+0001  stloc.0
+0002  ldarg.0
+0003  ldc.i4.1
+0004  and
+0005  brfalse.s 32
+0007  newobj "SECURITY_ATTRIBUTES::.ctor [0x6001a3e]"
+000c  stloc.0
+000d  ldloc.0
+000e  ldloc.0
+000f  call "System.Runtime.InteropServices.Marshal::SizeOf [0xa000202]"
+0014  stfld "SECURITY_ATTRIBUTES::nLength [0x4000ce6]"
+0019  ldloc.0
+001a  ldc.i4.1
+001b  stfld "SECURITY_ATTRIBUTES::bInheritHandle [0x4000ce8]"
+0020  ldloc.0
+0021  ret
+

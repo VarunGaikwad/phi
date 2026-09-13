@@ -4,10 +4,22 @@ import { copyHash, validateSyntheticSnapshot, type SyntheticCopyFile } from "./s
 import { MAX_AGENT_PACKET_BYTES, validateRuntimePath } from "./agent-runtime.ts";
 import { createFixtureArgs, fixtureCommand, inspectFixture, object, requireProbe } from "./docker-spec.ts";
 
+export const LIFECYCLE_CHECK_IDS = [
+  "transitionCancellation", "sessionNew", "sessionResume", "sessionFork", "sessionClone", "sessionTree",
+  "sessionReloadWork", "streamCancellation", "toolCancellation", "queuedCancellation", "extensionToolFailure",
+  "extensionHookFailure", "lifecycleScope", "shutdownFailureContained", "lifecycleEventOrder",
+] as const;
+export const LIFECYCLE_EVENTS = [
+  "start:startup", "before:new", "before:resume", "before:fork:before", "before:fork:at", "before:tree",
+  "before:new", "shutdown:new", "start:new", "before:resume", "shutdown:resume", "start:resume",
+  "before:fork:before", "shutdown:fork", "start:fork", "before:fork:at", "shutdown:fork", "start:fork",
+  "before:tree", "tree", "shutdown:reload", "start:reload", "shutdown:quit",
+] as const;
 export const AGENT_CHECK_IDS = [
   "cleanEnvironment", "snapshotMatch", "sdkVersion", "resourcesExplicit", "extensionDirect",
   "deniedReads", "deniedWrites", "noHostBridges", "networkInterfaces", "networkProbes",
   "detachedChild", "builtInRead", "builtInEdit", "builtInWrite", "shellChild", "agentLoop", "sessionLifecycle",
+  ...LIFECYCLE_CHECK_IDS,
 ] as const;
 export const IDLE_AGENT_FIXTURE = "process.on('SIGTERM',()=>{});setInterval(()=>{},1000);";
 export function agentEnvironment(): string[] {
@@ -98,13 +110,56 @@ const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 })().catch(()=>{process.stdout.write('{"error":"AGENT_BOOTSTRAP_FAILED"}\n');process.exitCode=1});
 `;
 
+// A separate exec reads actual effects and disposable session files, not pi's booleans.
+// Same guest privilege: useful independent evidence, NOT hostile-guest attestation.
+export const VERIFY_LIFECYCLE_EFFECTS = String.raw`
+function verifyLifecycle(nonce) {
+ const root='/home/node/.pi/sessions/lifecycle';
+ const read=(path)=>{const s=fs.lstatSync(path);if(!s.isFile()||s.isSymbolicLink()||s.nlink!==1||s.size<=0||s.size>131072)throw Error('LIFECYCLE_EFFECT_INVALID');return fs.readFileSync(path,'utf8')};
+ const ledger=JSON.parse(read('/workspace/lifecycle.json'));
+ if(Object.keys(ledger).sort().join(',')!=='events,nonce,version'||ledger.version!==1||ledger.nonce!==nonce
+   ||JSON.stringify(ledger.events)!==${JSON.stringify(JSON.stringify(LIFECYCLE_EVENTS))})return false;
+ const names=fs.readdirSync(root);
+ if(names.length!==4||!names.every(n=>/^[0-9a-fTZ._-]+\.jsonl$/.test(n)))return false;
+ const ids=new Set();const messages=[];let original=0,newSession=0,fork=0;
+ for(const name of names){
+   const text=read(root+'/'+name);
+   if(/SYNTHETIC_SECRET_NOT_A_CREDENTIAL|SYNTHETIC_UNAPPROVED|SYNTHETIC_STARTUP_MUST_NOT_RUN|PHI_QUEUED_MUST_NOT_RUN|phi-stale-must-not-append/.test(text))return false;
+   const entries=text.trim().split('\n').map(line=>JSON.parse(line));const header=entries.shift();
+   if(header.type!=='session'||header.version!==3||header.cwd!=='/workspace'||typeof header.id!=='string'||ids.has(header.id))return false;
+   ids.add(header.id);
+   if(header.parentSession!==undefined&&(!header.parentSession.startsWith(root+'/')||!names.includes(header.parentSession.slice(root.length+1))))return false;
+   for(const entry of entries)if(entry.type==='message'){
+     messages.push(entry.message);
+     if(entry.message.role==='user'){
+       const content=JSON.stringify(entry.message.content);
+       if(content.includes('PHI_SESSION_ORIGINAL'))original++;
+       if(content.includes('PHI_SESSION_NEW'))newSession++;
+       if(content.includes('PHI_SESSION_FORK'))fork++;
+     }
+   }
+ }
+ const failed=(name,marker)=>messages.some(m=>m.role==='toolResult'&&m.toolName===name&&m.isError===true&&JSON.stringify(m.content).includes(marker));
+ return original===1&&newSession===1&&fork===2
+   &&messages.some(m=>m.role==='assistant'&&m.stopReason==='aborted')
+   &&failed('fixture_throw','PHI_EXPECTED_TOOL_FAILURE')&&failed('write','PHI_EXPECTED_HOOK_FAILURE')
+   &&messages.some(m=>m.role==='toolResult'&&m.toolName==='fixture_wait'&&m.isError===true)
+   &&read('/workspace/reload-work.txt')==='PHI_RELOAD_WORK'
+   &&read('/workspace/cancel-before.txt')==='PHI_CANCEL_BEFORE'
+   &&read('/workspace/cancel-observed.txt')==='PHI_CANCEL_OBSERVED'
+   &&read('/workspace/after-cancel.txt')==='PHI_AFTER_CANCEL'
+   &&read('/workspace/throw-before.txt')==='PHI_THROW_BEFORE'
+   &&['hook-must-not-write.txt','cancel-must-not-write.txt'].every(n=>!fs.existsSync('/workspace/'+n));
+}
+`;
 export const VERIFY_AGENT_EFFECTS = String.raw`
 const fs=require('node:fs');
+${VERIFY_LIFECYCLE_EFFECTS}
 const first=JSON.parse(fs.readFileSync('/workspace/detached.json','utf8'));
 setTimeout(()=>{try{
  const second=JSON.parse(fs.readFileSync('/workspace/detached.json','utf8'));
  process.kill(second.pid,0);
- const ok=second.pid===first.pid&&second.tick>first.tick
+ const ok=second.pid===first.pid&&second.tick>first.tick&&verifyLifecycle(process.argv[1])
   &&fs.readFileSync('/workspace/result.txt','utf8')==='PHI_WRITE_OK\n'
   &&fs.readFileSync('/workspace/src/index.js','utf8').includes('edited fixture')
   &&['.env','.git','.pi','AGENTS.md','SYSTEM.md','node_modules'].every(x=>!fs.existsSync('/workspace/'+x));

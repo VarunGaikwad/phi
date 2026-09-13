@@ -29,6 +29,10 @@
     "guard:probe-docker": "node --experimental-transform-types guard-host/probe-docker.ts",
     "guard:probe-copy": "node --experimental-transform-types guard-host/probe-copy.ts",
     "guard:probe-agent": "node --experimental-transform-types guard-host/probe-agent.ts",
+    "guard:probe-recovery": "node --experimental-transform-types guard-host/probe-recovery.ts",
+    "guard:probe-network": "node --experimental-transform-types guard-host/probe-network.ts",
+    "guard:probe-store": "node --experimental-transform-types guard-host/probe-store.ts",
+    "guard:probe-acl": "node --experimental-transform-types guard-host/probe-acl.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-transform-types --test tests/*.test.ts",
     "test:smoke": "python3 tests/smoke.py"

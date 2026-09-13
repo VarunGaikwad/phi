@@ -1,22 +1,31 @@
 # Guard Phase 0: offline whole-agent experiment
 
-## Status — implemented, NOT runtime-accepted
+## Status — native offline fixture passed, full Guard gate incomplete
 
-Order **01** continues. `guard:probe-agent` is now an opt-in **Windows-only**
-experiment joining a synthetic snapshot to a pi SDK runtime inside the existing
-hardened Docker profile. **It has not been run against Docker or native Windows.**
-This continuation is on Linux / Node **24.17.0**, without Docker or a Windows shell
-on PATH. There is no host-pi fallback.
+Order **01** continues. On **2026-09-12**, the expanded `guard:probe-agent` passed
+**all 35 checks** on native Windows / Node **22.23.0**, Docker Desktop Linux / WSL2,
+Engine **29.4.3**, using the retained approved Node image. Exit **0**, container and
+host cleanup **removed**; a separate bounded query confirmed container absence.
+See [lifecycle revision and native evidence](Agent-Lifecycle-Prototype.md).
 
-Local validation: typecheck and doctor CLI smoke passed; **79 tests passed,
-1 Windows-only ADS test skipped, 0 failed** (80 cases). The 16 new tests use Docker
-fakes, an in-memory bootstrap filesystem, fixed vendor-file reads and syntax-only
-Node checks. **No pi SDK, extension, guest tool, container or network probe was
-executed by those tests.** These results do not establish runtime compatibility.
+The [earlier 20-check run](Windows-Offline-Agent-Run.md) established the SDK/tool/
+inline-extension loop, synthetic copy, detached child, single reload and host stop.
+The current revision adds 15 decisions for guest-only persisted session transitions,
+subsequent reload work, cancellation/queue clearing and extension failures. Runtime
+pins and container restrictions are unchanged. **These are fixed offline results,
+not the full Guard Phase 0 gate or a production backend.** No host-pi fallback.
+
+Latest native Windows validation: typecheck and doctor CLI smoke passed;
+**111 tests passed, 1 POSIX-only skip, 0 failed** (112 cases), including Windows ADS.
+The 16 original agent tests and seven new lifecycle tests use Docker fakes,
+in-memory filesystems, fixed vendor-file reads and syntax-only Node checks.
+**No pi SDK, extension, guest tool, container or network probe is executed by those
+unit tests.** Runtime evidence comes from the separately opted-in native fixture.
 
 The earlier [Windows Node fixture](Windows-Docker-Fixture-Pass.md) and
 [host-only copy fixture](Synthetic-Copy-Prototype.md) remain separate passing
-results. Their success does not imply this combined experiment passes.
+results. The combined experiment now has its own real-backend evidence; its pass
+is not inferred from those earlier fixtures or the unit tests.
 
 Every report remains **Locked / protection not active / canLaunch false**.
 Provider/authentication-method selection and gateway acceptance remain
@@ -27,7 +36,7 @@ remain pending. The current pi process is not protected.
 
 Files: `guard-host/agent-runtime.ts`, `agent-runtime-inventory.json`,
 `agent-spec.ts`, `agent-probe.ts`, `probe-agent.ts`, `guest/offline-agent.ts`, and
-`tests/guard-agent.test.ts`.
+`tests/guard-agent.test.ts` and `tests/guard-agent-lifecycle.test.ts`.
 
 With explicit `--confirm` and a trusted installed `docker.exe`, the command:
 
@@ -65,10 +74,11 @@ With explicit `--confirm` and a trusted installed `docker.exe`, the command:
    under `/workspace`. It refuses existing runtime/workspace contents.
 9. Imports pi **only inside the guest**, after checking Linux/Node 24, UID/GID,
    cwd, capabilities/no-new-privileges and the exact allowlisted environment.
-   Uses memory-only credentials/settings/session data; disables discovery of
-   extensions, skills, prompts, themes and context files; supplies a literal
-   system prompt and empty append prompt list. One controller-owned inline
-   extension is explicit. `PI_OFFLINE=1` and telemetry opt-out supplement the
+   Uses memory-only credentials/settings and an initial in-memory session;
+   disables discovery of extensions, skills, prompts, themes and context files;
+   supplies a literal system prompt and empty append prompt list. Controller-owned
+   inline extensions are explicit. The added lifecycle runtime persists only
+   synthetic guest-tmpfs sessions, never host history. `PI_OFFLINE=1` and telemetry opt-out supplement the
    network namespace; they are not treated as firewalls.
 10. Runs one deterministic, in-memory provider sequence through the real pi
     `createAgentSession()` / `session.prompt()` loop: built-in read, edit, write,
@@ -81,12 +91,16 @@ With explicit `--confirm` and a trusted installed `docker.exe`, the command:
     IPv4/IPv6 TEST-NET addresses. A timeout or unexpected network error fails;
     no real provider, LAN service, cloud metadata or personal file is contacted.
 12. Creates a detached guest Node child that ignores SIGTERM and writes a
-    heartbeat. Checks agent completion and a reload lifecycle, without submitting
-    another prompt, importing host history, or resuming work automatically.
-13. Validates all **17 fixed guest checks**, then uses a separate controller-issued
-    exec to check actual copy edits, excluded-file absence and a live, advancing
-    detached heartbeat. This verifier shares guest privilege; it is independent
-    of the pi result but is not tamper-proof against a compromised guest.
+    heartbeat. Checks initial agent completion/reload, then runs the fixed
+    [lifecycle sequence](Agent-Lifecycle-Prototype.md): synthetic new/resume/fork/
+    clone/tree/reload, subsequent tool work, stream/tool cancellation with explicit
+    queue clearing, and deliberate extension tool/hook/shutdown failures. No host
+    history import or automatic resumption of cancelled work.
+13. Validates all **32 fixed guest checks**, then uses a separate controller-issued
+    exec to check actual copy/lifecycle effects, four bounded guest session files,
+    exact event order, excluded-file absence and a live, advancing detached
+    heartbeat. This verifier shares guest privilege; it is independent of the pi
+    result but is not tamper-proof against a compromised guest.
 14. Rechecks ownership/configuration and issues host-owned engine **SIGKILL**,
     then requires `wait` exit 137 and an exited/non-running/non-OOM state with PID
     zero. The stop does not depend on guest pi cancellation or extension cleanup.
@@ -98,10 +112,11 @@ With explicit `--confirm` and a trusted installed `docker.exe`, the command:
 16. Removes its host temp directory, checks absence, and reports `hostCleanup`
     separately from container cleanup. Only then emits a sanitized final report.
 
-There are **20 expected checks** in a successful report: 17 guest checks plus
-`independentGuestEffects`, `hostStop`, and `hostFixturesUnchanged`. They are expected
-checks, **not passed real-backend results**. Docker operations have 15-second
-limits and 128 KiB output caps. The bootstrap's input deadline is 10 seconds.
+There are **35 required checks** in a current successful report: 32 guest checks
+plus `independentGuestEffects`, `hostStop`, and `hostFixturesUnchanged`. All passed
+in the recorded lifecycle revision; the earlier report had 20. This does not cover
+the remaining acceptance below.
+Docker operations have 15-second limits and 128 KiB output caps. The bootstrap's input deadline is 10 seconds.
 Output contains fixed decisions/check IDs, engine/image identity and a synthetic
 container name, not raw errors, canary contents, context, manifests or host paths.
 
@@ -133,8 +148,9 @@ The guest-only pi metadata is a small **version-pinned distribution adapter**:
 public `@earendil-works/pi-coding-agent` imports resolve to the vendor's published
 bundled SDK index rather than its normal unbundled SDK index. No vendor JavaScript
 is patched, no private pi classes are imported, and the host installation remains
-unchanged. The adapter is experimental and unverified on the target runtime;
-it is not a claim that pi documents this as its normal SDK deployment contract.
+unchanged. The adapter is experimental, now runtime-tested for this fixed offline
+sequence only; it is not a claim that pi documents this as its normal SDK
+deployment contract or that other SDK features/toolchains have been validated.
 
 The 383rd runtime file is PHI's own guest fixture, stripped of TypeScript types by
 Node on the host. This does not execute its imports. Native clipboard, image
@@ -150,7 +166,13 @@ Do not automatically regenerate pins following a mismatch. Review the installed
 version/source and any intended inventory change first. This experiment is not
 an npm redistribution or the final PHI launcher/package design.
 
-## Native Windows run (still pending)
+## Native Windows run (expanded 35 checks and cleanup passed)
+
+The [initial native record](Windows-Offline-Agent-Run.md) preserves engine blockers
+and the 20-check retry; the [lifecycle record](Agent-Lifecycle-Prototype.md) documents
+the current 35-check pass. Review both experiment scopes. Runs require the already-installed
+Docker Desktop's Linux/WSL2 engine to be ready. No installation, image download,
+engine switch or settings change is implicitly approved.
 
 Review this scope first. From native PowerShell in the checkout, with Desktop's
 Linux/WSL2 engine already running and the previously approved Node image retained:
@@ -183,15 +205,24 @@ watchdog, broker-expiry protocol or production recovery service is claimed.
 
 ## Remaining acceptance
 
-Even a future successful native run does not complete Guard Phase 0:
+The successful native offline run does not complete Guard Phase 0:
 
 - Provider gateway/fake-credential compatibility stays deferred. The finite
   in-memory event source proves neither HTTP streaming nor authentication/OAuth.
 - Protected categories and additional private paths still need local finalization.
 - Active Desktop settings, VM sharing/trust assumptions, native toolchains and
   the supported backend matrix remain to be finalized.
-- Broader adversarial network/DNS/redirect/IPC checks, packet-level observations,
-  controller-loss/restart recovery and full lifecycle behavior are unproven.
+- A separate [Node-only network/IPC primitive](Network-IPC-Prototype.md) passed 21
+  synthetic checks with guest-local TCP/UDP/DNS/redirect controls and live peer
+  isolation. Broader protocol variants, real host/LAN probes, packet-level proof
+  and gateway compatibility remain unproven.
+- Supervisor-loss/restart recovery and full lifecycle behavior are unproven. A
+  separate [Node-only worker-loss primitive](Worker-Loss-Prototype.md) passed five
+  checks: the guest survived worker death, then a surviving supervisor stopped and
+  removed it. That primitive does not test pi/session failure paths or supervisor
+  loss. The added whole-agent lifecycle sequence now passes its fixed SDK session/
+  cancellation/failure scope, but not hung extensions, cross-workspace transitions,
+  production policy revocation, controller loss or restart reconciliation.
 - Production link/reparse/alias/race-safe admission and reviewed host apply are
   not implemented. The synthetic copy helper must not become that importer.
 - A guest result/heartbeat is not trusted authorization or complete hostile-guest
